@@ -1,0 +1,408 @@
+[{
+  "_id": {
+    "$oid": "6214f418e944a4fcbdddead0"
+  },
+  "Tensach": "Sách Tiếng Việt Lớp 1",
+  "Giaban": 29,
+  "Mota": "Sách Giáo Khoa Tiếng Việt Lớp 1 giúp các em làm quen với bảng chữ cái và các dấu câu, các âm cơ bản trong tiếng việt và học cách đánh vần.  Phân biệt chữ thường, chữ hoa trong cách viết. Với những hình vẽ sinh động, thực tế và cách phát âm chính xác giúp các em làm quen với môn tiếng việt dễ dàng.",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/1.jpg?alt=media&token=5986cb44-e55d-49cb-b89d-0d2255c3a73f",
+  "Soluongton": 95,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 11,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-03-31T13:38:27.395Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6216f15973fe0835950efa0e"
+  },
+  "Tensach": "Sách Tiếng Việt Lớp 2",
+  "Giaban": 23.5,
+  "Mota": "Sách Giáo Khoa Tiếng Việt Lớp 2 tập 2 tiếp tục giúp các em rèn luyện các kĩ năng của mình về phần đọc kể chuyện, luyện từ câu, tập làm văn và chính tả qua các chủ đề bằng những câu chuyện sinh động, giúp các em hứng thú hơn trong việc tìm hiểu và học môn này",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/2.jpg?alt=media&token=350c7719-83ad-4908-8320-c286ae9ecfb4",
+  "Soluongton": 203,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 2,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-03-25T11:03:15.307Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6216ffed73fe0835950efa20"
+  },
+  "Tensach": "Sách Tiếng Việt Lớp 4",
+  "Giaban": 9.8,
+  "Mota": "Tả quyển sách tiếng việt lớp 4 là một đề bài tập làm văn giúp các em học sinh củng cố lại kiến thức và kĩ năng viết văn miêu tả. Đặc biệt là kì thi học kì một sắp đến. Bài hướng dẫn tập làm văn “Tả quyển sách tiếng việt lớp 4” sẽ hổ trợ các em ôn tập và hiểu thêm về văn miêu tả",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/4.jpg?alt=media&token=755e49e7-136b-4dd0-a1f7-56ca8d774cc6",
+  "Soluongton": 58,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 48,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-04-05T01:52:05.305Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6216fff373fe0835950efa22"
+  },
+  "Tensach": "Sách Tiếng Việt Lớp 5",
+  "Giaban": 13,
+  "Mota": "Tiếng Việt lớp 5 Tập 1 & Tập 2 hay nhất, chi tiết đầy đủ các phần Tập dọc, Luyện từ và câu, Kể chuyện, Chính tả, Tập làm văn sẽ giúp Giáo viên, phụ huynh có thêm tài liệu giúp các em học sinh lớp 5 dễ dàng làm bài tập về nhà từ đó học tốt môn Tiếng Việt lớp 5.",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/5.jpg?alt=media&token=7a3f3e8c-dcb5-40dd-b226-374e26749898",
+  "Soluongton": 198,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 8,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-03-23T05:37:01.241Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6217013973fe0835950efa26"
+  },
+  "Tensach": "Sách Toán Lớp 6 Tập 2",
+  "Giaban": 5,
+  "Mota": "Sách Giáo Khoa Toán Lớp 6 gồm hai tập do bộ giáo dục và đào tạo phát hành.Phần một là đại số,phần hai là hình học.Cuốn sách cung cấp cho học sinh những kiến thức cơ bản về toán và kỹ năng giải toán.Đồng thời học sinh sẽ được học nhưng kiến thức cơ bản về hình học",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/6.jpg?alt=media&token=66a65e54-8360-4f25-b802-64322abf2b3c",
+  "Soluongton": 86,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 39,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-04-07T04:17:14.390Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6217014073fe0835950efa28"
+  },
+  "Tensach": "Sách Toán Lớp 7 Tập 1",
+  "Giaban": 7.2,
+  "Mota": "Sách Giáo Khoa Toán Lớp 7 được bộ Giáo Dục và Đào Tạo biên soạn và phát hành.Sách gồm hai phần:Đại số và Hình Học.Mỗi phần gồm hai chương và trong mỗi chương có những bài học chuyên môn củng cố kiến thức cho học sinh.",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/7.jpg?alt=media&token=c1a5d389-8a01-4e03-a454-c2aabcf69ad8",
+  "Soluongton": 92,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 16,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-03-26T14:43:59.818Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6217014d73fe0835950efa2c"
+  },
+  "Tensach": "Sách Toán Lớp 9 Tập 2",
+  "Giaban": 6.9,
+  "Mota": "Sách Giáo Khoa Toán Lớp 9 được bộ giáo dục và đào tạo biên soạn và phát hành.Cuốn sách tổng hợp công thức, lý thuyết, phương pháp giải bài tập đại số và hình học.",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/9.jpg?alt=media&token=257fe98f-d09b-4a19-8441-0d61674a5e1d",
+  "Soluongton": 56,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 54,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-04-07T04:05:24.452Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6217015573fe0835950efa2e"
+  },
+  "Tensach": "Đại Số 10",
+  "Giaban": 8.4,
+  "Mota": "Cuốn sách Đại Số 10 gồm các bài tập được chọn lọc và sắp xếp một cách có hệ thống, bám sát từng chủ đề kiến thức trong sách giáo khoa, nhằm giúp các em học sinh sử dụng song song với sách giáo khoa, vừa củng cố kiến thức đang học, vừa nâng cao kĩ năng giải toán cũng như ôn luyện thi Đại học...",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/10.jpg?alt=media&token=63c8aa8f-6a38-4f9d-a5d3-e41571db1740",
+  "Soluongton": 86,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "soluongban": 26,
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "updatedAt": {
+    "$date": "2022-04-07T04:04:18.005Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6217656044955c586679b6f6"
+  },
+  "Tensach": "Đại Số Và Giải Tích",
+  "Giaban": 9.3,
+  "Mota": "Sách Giáo Khoa Đại Số Và Giải Tích Lớp 11 gồm 184 trang do nhà xuất bản Giáo dục Việt Nam phát hành, đây là cuốn SGK Đại số và Giải tích 11 chính thống được dành cho học sinh khối 11. Sách được sử dụng cho giáo viên giảng dạy và học sinh học tập tại các trường THPT và cơ sở giáo dục trên toàn quốc với các kiến thức Toán căn bản mà mọi học sinh lớp 11 cần có. Sách còn giúp bạn đọc tra cứu các kiến thức chuẩn Đại số và Giải tích 11",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/11.jpg?alt=media&token=0d565cd6-f437-4a57-9215-083f61939d92",
+  "Soluongton": 97,
+  "MaCD": [
+    "6214f37881e7e0942c9a4f97"
+  ],
+  "MaNXB": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "MaTacGia": {
+    "$oid": "62176463cf0bb780ca027099"
+  },
+  "soluongban": 4,
+  "updatedAt": {
+    "$date": "2022-03-28T07:26:40.854Z"
+  },
+  "status": false
+},{
+  "_id": {
+    "$oid": "6219f2866aa8ad97e8812c6a"
+  },
+  "Tensach": "Sakurasou No Pet Na Kanojo",
+  "Giaban": 685,
+  "Mota": "Kanda Sorata đã bị đuổi khỏi ký túc xá bình thường của trường sau khi anh ta bị phát hiện nuôi một con mèo. Vì vậy, anh không còn lựa chọn nào khác ngoài việc chuyển đến ký túc xá Sakurasou khét tiếng, được biết đến trong toàn học viện với những cư dân lập dị. Chính tại đây, anh đã gặp Shiina Mashiro. Shiina là một họa sĩ đẳng cấp thế giới và là một người am hiểu nghệ thuật. Tuy nhiên, cô ấy thiếu tất cả mọi thứ. Thật không may cho Kanda, anh đã trở thành người chăm sóc cô và cuộc sống hàng ngày của cô phụ thuộc hoàn toàn vào anh",
+  "Anhbia": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/hoMYTqN.jpg?alt=media&token=c6de6374-7e30-46aa-a289-8723515947d2",
+  "Soluongton": 58,
+  "MaCD": [
+    "6219f0e04f3ba73b598e2c94",
+    "62122536d9793453ef7f345b"
+  ],
+  "MaNXB": {
+    "$oid": "6225834ae2dac1ee6d20b009"
+  },
+  "MaTacGia": {
+    "$oid": "6219f14e4f3ba73b598e2c96"
+  },
+  "createdAt": {
+    "$date": "2022-02-26T09:27:34.998Z"
+  },
+  "updatedAt": {
+    "$date": "2022-04-06T05:08:42.516Z"
+  },
+  "__v": 0,
+  "soluongban": 1,
+  "status": true
+},{
+  "_id": {
+    "$oid": "6238996d35f8b2a374cc1ff8"
+  },
+  "Tensach": "ĐẠI VƯƠNG THA MẠNG",
+  "Giaban": 55,
+  "Mota": "Sau khi linh khí hồi phục, mọi người chắt chiu từng tơ linh khí, chỉ có Lữ Thụ, dựa vào hệ thống điểm cảm xúc tiêu cực , oán hận người khác là trở nên mạnh hơn! Cậu ta chỉ muốn bảo vệ em gái, nhưng mà thời kì lũ lụt khó có thể tránh khỏi, chỉ đành..... tiện oán hận người khác , trở nên mạnh hơn! Vậy thì , chuẩn bị xong chưa, Lữ Thụ \"Đại Ma Vương \" tới đây",
+  "Anhbia": "https://storage.googleapis.com/chat-1e086.appspot.com/1648986287116_1638553813-dai-vuong-tha-mang-3386.jpg",
+  "Soluongton": 189,
+  "MaCD": [
+    "621991a0d75e203d64b9e0b0",
+    "6238990235f8b2a374cc1fe2",
+    "6238990f35f8b2a374cc1fe6",
+    "6228fdd70aa0653f1d0d9da5",
+    "6232b2f7cfaf6fb00bcbc7a5"
+  ],
+  "MaNXB": {
+    "$oid": "6235c29e29908a23c0ea0a8d"
+  },
+  "MaTacGia": {
+    "$oid": "6238995c35f8b2a374cc1ff5"
+  },
+  "createdAt": {
+    "$date": "2022-03-21T15:27:41.690Z"
+  },
+  "updatedAt": {
+    "$date": "2022-04-02T07:29:57.585Z"
+  },
+  "__v": 0,
+  "soluongban": 13,
+  "status": false
+},{
+  "_id": {
+    "$oid": "6239e7cebf63e7a420fc059a"
+  },
+  "Tensach": "NGƯỜI CHƠI MỚI CẤP TỐI ĐA\n",
+  "Giaban": 20,
+  "Mota": "Tên khác:  Tôi Là Tân Thủ Có Cấp Cao Nhất\nJinhyuk, một Nutuber chơi game, là người duy nhất nhìn thấy phần kết của trò chơi [Tower of Trials]. Tuy nhiên, khi mức độ phổ biến của trò chơi giảm sút, anh ấy trở nên khó khăn để tiếp tục kiếm sống bằng nghề chơi game Nutuber. Vì anh ấy đã nhìn thấy kết thúc trò chơi, anh ấy định nghỉ chơi. Nhưng ngày hôm đó, [Tower of Trials] đã trở thành hiện thực, và Jinhyuk, người biết về mọi thứ trong trò chơi, đã tiếp quản mọi thứ nhanh hơn bất kỳ ai có thể làm được! \"Tôi\" Tôi sẽ cho bạn thấy một người chuyên nghiệp thực sự là như thế nào. \"",
+  "Anhbia": "https://bookingapiiiii.herokuapp.com/open-image/img_1648031951523nguoi-choi-moi-cap-toi-da.jpg",
+  "Soluongton": 9,
+  "MaCD": [
+    "6238990235f8b2a374cc1fe2",
+    "622996ffe2bc9eb96ba9e702",
+    "6232b2f7cfaf6fb00bcbc7a5"
+  ],
+  "MaNXB": {
+    "$oid": "6235c29e29908a23c0ea0a8d"
+  },
+  "MaTacGia": {
+    "$oid": "6239e76abf63e7a420fc0595"
+  },
+  "createdAt": {
+    "$date": "2022-03-22T15:14:22.975Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-28T13:07:03.475Z"
+  },
+  "__v": 0,
+  "status": false,
+  "soluongban": 1
+},{
+  "_id": {
+    "$oid": "6239eae7bf63e7a420fc05d2"
+  },
+  "Tensach": "GOBLIN SLAYER GAIDEN: YEAR ONE",
+  "Giaban": 22,
+  "Mota": "Ngoại truyện của bộ Goblin Slayer",
+  "Anhbia": "https://bookingapiiiii.herokuapp.com/open-image/img_1648031899395goblin-slayer-gaiden-year-one.jpg",
+  "Soluongton": 50,
+  "MaCD": [
+    "6238990235f8b2a374cc1fe2",
+    "6219f0e04f3ba73b598e2c94"
+  ],
+  "MaNXB": {
+    "$oid": "6235c29e29908a23c0ea0a8d"
+  },
+  "MaTacGia": {
+    "$oid": "6239e76abf63e7a420fc0595"
+  },
+  "createdAt": {
+    "$date": "2022-03-22T15:27:35.556Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-28T05:59:02.620Z"
+  },
+  "__v": 0,
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c15d1cb00d5bcb69cc31a"
+  },
+  "Tensach": "Dị Năng Trọng Sinh Thiếu Nữ Thiên Tài Bói Toán",
+  "Giaban": 22,
+  "Mota": "Lúc trước cô là một thầy bói toán, nhưng chính vì chuyên nói dối ăn tiền mà bị người đánh chết.\n\nNhưng sau khi mở mắt tỉnh dậy, cô phát hiện bản thân đã quay về lúc năm tuổi. Và không lâu sau đó, cơ duyên đến, cô vì chiếc bình ngọc của Bồ Tát rơi trúng đầu mà mở ra Thiên Nhãn.\n\nSau khi Thiên Nhãn xuất hiện, cô bỗng chốc trở thành một thiên tài gặp qua là nhớ, tài năng càng ngày càng xuất chúng. Cô có khả năng nhìn thấu sinh tử, phúc họa của người khác qua tướng mạo, đồng thời có thể cải tử hồi sinh.\n\nĐời trước, một mình cô sống cô đơn, gia đình tan nát, không nơi nương tựa. Đời này cô nhất định phải",
+  "Anhbia": "https://bookingapiiiii.herokuapp.com/open-image/img_1648104671653di-nang-trong-sinh-thieu-nu-thien-tai-boi-toan.jpg",
+  "Soluongton": 23,
+  "MaCD": [
+    "623c15aecb00d5bcb69cc315",
+    "6228fdd70aa0653f1d0d9da5"
+  ],
+  "MaNXB": {
+    "$oid": "6235c29e29908a23c0ea0a8d"
+  },
+  "MaTacGia": {
+    "$oid": "6235ae1529908a23c0ea06ac"
+  },
+  "createdAt": {
+    "$date": "2022-03-24T06:55:13.867Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-27T10:04:19.094Z"
+  },
+  "__v": 0,
+  "soluongban": 2,
+  "status": false
+},{
+  "_id": {
+    "$oid": "623ca7561e81363477927205"
+  },
+  "Tensach": "Yêu Thần Ký",
+  "Giaban": 2,
+  "Mota": "Yêu Thần Vừa Xuất, Ai Dám Tranh Phong\nYêu Linh Sư Mạnh Nhất Thánh Linh Đại Lục Nhiếp Li, bởi vì một cuốn sách thần bí Yêu Linh Thời Không mà trở về năm 13 tuổi, tu luyện mạnh nhất công pháp, mạnh nhất yêu linh chi lực, đột phá tới võ đạo đỉnh phong...\nKẻ thù kiếp trước, toàn bộ thanh toán...\nNếu như đã trùng sinh, thì kiếp này ta là chúa tể đại lục, Vạn Thần chi Vương,để cho tất cả run rẩy dưới chân ta đi",
+  "Anhbia": "https://storage.googleapis.com/chat-1e086.appspot.com/1648986287116_yeu-than-ky.jpg",
+  "Soluongton": 5,
+  "MaCD": [
+    "6228fdd70aa0653f1d0d9da5",
+    "622996ffe2bc9eb96ba9e702",
+    "6238990235f8b2a374cc1fe2",
+    "6238990f35f8b2a374cc1fe6"
+  ],
+  "MaNXB": {
+    "$oid": "6232dbc3c0b3e1d13a3b2eaf"
+  },
+  "MaTacGia": {
+    "$oid": "623c568021d2b49853904a24"
+  },
+  "createdAt": {
+    "$date": "2022-03-24T17:16:06.154Z"
+  },
+  "updatedAt": {
+    "$date": "2022-04-02T07:29:57.585Z"
+  },
+  "__v": 0,
+  "soluongban": 3,
+  "status": true
+},{
+  "_id": {
+    "$oid": "623cab911e81363477927252"
+  },
+  "Tensach": "NGÃ LÃO MA THẦN",
+  "Giaban": 23,
+  "Mota": "Một trong những Ma thần mạnh nhất lịch sử võ lâm xuất hiện, là kỳ tài võ học kinh người, nhưng khởi nguồn lại là do ... thằng chút chít cách đó cả ngàn năm bay về can thiệp, câu chuyện hư cmn cấu này rồi sẽ đi đâu về đâu =))",
+  "Anhbia": "https://storage.googleapis.com/chat-1e086.appspot.com/1648986287116_download.jpg",
+  "Soluongton": 199,
+  "MaCD": [
+    "6238990235f8b2a374cc1fe2"
+  ],
+  "MaNXB": {
+    "$oid": "623c2ea592cc70fb690295f7"
+  },
+  "MaTacGia": {
+    "$oid": "623c568021d2b49853904a24"
+  },
+  "createdAt": {
+    "$date": "2022-03-24T17:34:09.592Z"
+  },
+  "updatedAt": {
+    "$date": "2022-04-02T08:31:01.253Z"
+  },
+  "__v": 0,
+  "soluongban": 3,
+  "status": false
+}]

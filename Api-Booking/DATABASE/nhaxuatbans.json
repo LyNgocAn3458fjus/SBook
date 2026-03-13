@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "6214e66d556c98359f2387a3"
+  },
+  "TenNXB": "Bộ Giáo Dục",
+  "Diachi": "Số 35 Đại Cồ Việt, Hà Nội",
+  "DienThoai": "02438695144",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6225834ae2dac1ee6d20b009"
+  },
+  "TenNXB": "Tokyo",
+  "Diachi": "đâsda",
+  "DienThoai": "123123123231",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232af666d8d17c39eb80c27"
+  },
+  "TenNXB": "Kim Đồng",
+  "Diachi": "Thành Phố Hồ Chí Minh",
+  "DienThoai": "",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232afa3292cfef288d52484"
+  },
+  "TenNXB": "Nhà xuất bản Trẻ",
+  "Diachi": "161B Lý Chính Thắng; Phường 7; Quận 3; Thành phố Hồ Chí Minh.",
+  "DienThoai": "0933226682",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232c8cfcfaf6fb00bcbc8fe"
+  },
+  "TenNXB": "Kim Đồng",
+  "Diachi": "Thành Phố Hồ Chí Minh",
+  "DienThoai": "0354698745",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232dbc3c0b3e1d13a3b2eaf"
+  },
+  "TenNXB": "NXB Phụ Nữ",
+  "Diachi": "16 Alexandre de Rhodes, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh",
+  "DienThoai": "028 3823 4806",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6235c29e29908a23c0ea0a8d"
+  },
+  "TenNXB": "Online",
+  "Diachi": "Online",
+  "DienThoai": "Online",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c2ea592cc70fb690295f7"
+  },
+  "TenNXB": "Đang Cập Nhật",
+  "status": false
+},{
+  "_id": {
+    "$oid": "624d286e553940f6280dee99"
+  },
+  "TenNXB": "test",
+  "status": true
+},{
+  "_id": {
+    "$oid": "624d2abcc3af181610f3ce78"
+  },
+  "TenNXB": "tt",
+  "status": true
+}]

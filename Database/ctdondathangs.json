@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "64cd0ffcd47a3387e55910cf"
+  },
+  "MaDonHang": {
+    "$oid": "64cd0ffbd47a3387e55910cc"
+  },
+  "Masach": {
+    "$oid": "6217014d73fe0835950efa2c"
+  },
+  "Soluong": 1,
+  "Dongia": 6.9
+},{
+  "_id": {
+    "$oid": "64ce380b4851698d4291d194"
+  },
+  "MaDonHang": {
+    "$oid": "64ce380b4851698d4291d191"
+  },
+  "Masach": {
+    "$oid": "6217015573fe0835950efa2e"
+  },
+  "Soluong": 1,
+  "Dongia": 8.4
+},{
+  "_id": {
+    "$oid": "64ce51164851698d4291d1f0"
+  },
+  "MaDonHang": {
+    "$oid": "64ce51164851698d4291d1ed"
+  },
+  "Masach": {
+    "$oid": "6217014d73fe0835950efa2c"
+  },
+  "Soluong": 3,
+  "Dongia": 6.9
+},{
+  "_id": {
+    "$oid": "64ce53304851698d4291d243"
+  },
+  "MaDonHang": {
+    "$oid": "64ce53304851698d4291d240"
+  },
+  "Masach": {
+    "$oid": "6216ffed73fe0835950efa20"
+  },
+  "Soluong": 5,
+  "Dongia": 9.8
+},{
+  "_id": {
+    "$oid": "64ce6efe6928ba263df55db6"
+  },
+  "MaDonHang": {
+    "$oid": "64ce6efe6928ba263df55db3"
+  },
+  "Masach": {
+    "$oid": "6217014d73fe0835950efa2c"
+  },
+  "Soluong": 3,
+  "Dongia": 6.9
+},{
+  "_id": {
+    "$oid": "64ce76ff6928ba263df55e10"
+  },
+  "MaDonHang": {
+    "$oid": "64ce76ff6928ba263df55e0d"
+  },
+  "Masach": {
+    "$oid": "6216ffed73fe0835950efa20"
+  },
+  "Soluong": 3,
+  "Dongia": 9.8
+},{
+  "_id": {
+    "$oid": "64d1de229ad47c5ef7d7e5a2"
+  },
+  "MaDonHang": {
+    "$oid": "64d1de219ad47c5ef7d7e59f"
+  },
+  "Masach": {
+    "$oid": "6217014d73fe0835950efa2c"
+  },
+  "Soluong": 1,
+  "Dongia": 6.9
+},{
+  "_id": {
+    "$oid": "651e07d78bcac4ed9f431147"
+  },
+  "MaDonHang": {
+    "$oid": "651e07d78bcac4ed9f431144"
+  },
+  "Masach": {
+    "$oid": "6216ffed73fe0835950efa20"
+  },
+  "Soluong": 2,
+  "Dongia": 9.8
+}]

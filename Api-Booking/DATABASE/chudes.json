@@ -1,0 +1,126 @@
+[{
+  "_id": {
+    "$oid": "6214f37881e7e0942c9a4f97"
+  },
+  "TenChuDe": "Sách Giáo Khoa",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6219918ad75e203d64b9e0ac"
+  },
+  "TenChuDe": "Sách Thiếu Nhi",
+  "status": false
+},{
+  "_id": {
+    "$oid": "621991a0d75e203d64b9e0b0"
+  },
+  "TenChuDe": "Manga - Comic",
+  "status": false
+},{
+  "_id": {
+    "$oid": "621991b8d75e203d64b9e0b4"
+  },
+  "TenChuDe": "Nghệ Thuật - Giải Trí",
+  "status": false
+},{
+  "_id": {
+    "$oid": "621991c4d75e203d64b9e0b6"
+  },
+  "TenChuDe": "Tâm Lý",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6228fdd70aa0653f1d0d9da5"
+  },
+  "TenChuDe": "Trọng Sinh",
+  "status": false
+},{
+  "_id": {
+    "$oid": "622996ffe2bc9eb96ba9e702"
+  },
+  "TenChuDe": "Xuyên Không",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232b2f7cfaf6fb00bcbc7a5"
+  },
+  "TenChuDe": "Giả Tưởng",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6232de4079a95aff17143c0c"
+  },
+  "TenChuDe": "Kinh Dị",
+  "status": false
+},{
+  "_id": {
+    "$oid": "62343aa3533eaf571366ba74"
+  },
+  "TenChuDe": "Trẻ Em",
+  "status": false
+},{
+  "_id": {
+    "$oid": "6238990235f8b2a374cc1fe2"
+  },
+  "TenChuDe": "Hành Động",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c15aecb00d5bcb69cc315"
+  },
+  "TenChuDe": "Thám Hiểm",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c2f4592cc70fb690295fd"
+  },
+  "TenChuDe": "Trinh Thám",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c2f5992cc70fb69029603"
+  },
+  "TenChuDe": "Siêu Nhiên",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c2f6392cc70fb69029609"
+  },
+  "TenChuDe": "Ác Quỷ",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c2f6e92cc70fb6902960f"
+  },
+  "TenChuDe": "Mystery",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c55b821d2b49853904a00"
+  },
+  "TenChuDe": "Action",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c55c121d2b49853904a06"
+  },
+  "TenChuDe": "Fantasy",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c55c721d2b49853904a0c"
+  },
+  "TenChuDe": "Manhua",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c55d021d2b49853904a12"
+  },
+  "TenChuDe": "Shounen",
+  "status": false
+},{
+  "_id": {
+    "$oid": "623c55dd21d2b49853904a18"
+  },
+  "TenChuDe": "Supernatural"
+}]

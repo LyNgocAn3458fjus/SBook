@@ -1,0 +1,137 @@
+[{
+  "_id": {
+    "$oid": "622e8a78e9e4c44a4e54ee9c"
+  },
+  "Anh": "https://storage.googleapis.com/chat-1e086.appspot.com/1649042418718_Hinh-anh-cute-chibi.jpg",
+  "HoTen": "Nguyễn Trung Dũng",
+  "Taikhoan": "dung",
+  "Matkhau": "$2a$10$e0i.xWaep5SvE3B52L32KepOIEzaYQ54DbVZilLRReEJHA7PWVq5G",
+  "Role": true,
+  "DiachiKH": "Ấp Gì Đó,Xã Gì Đó",
+  "DienthoaiKH": "0356998965",
+  "Email": "dungnguyen15920@gmail.com",
+  "Ngaysinh": "2000-12-12"
+},{
+  "_id": {
+    "$oid": "622fded5de942fa82659d5b8"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "admin",
+  "Taikhoan": "ADMIN_01",
+  "Matkhau": "$2a$10$fTc9AktbfMndNGYHh0BPKOWILRoumyls.1D/s3q4I6MAR01pfcDum",
+  "Role": true,
+  "DiachiKH": "12312312313",
+  "DienthoaiKH": "0903823344",
+  "Email": "12@gmail.com",
+  "Ngaysinh": "2040-12-31"
+},{
+  "_id": {
+    "$oid": "62317d354d535fb28a45958f"
+  },
+  "Anh": "https://storage.googleapis.com/chat-1e086.appspot.com/1648989839034_OIP.jpg",
+  "HoTen": "Nguyễn Đình Anh Kiệt",
+  "Taikhoan": "123",
+  "Matkhau": "$2a$10$o9wDkZIphibVihiM8hGHGuPAiT.XXVT6pb5lWAxRE/BddypA6x0XC",
+  "Role": true,
+  "DiachiKH": "Ấp Gì Đó,Có Xã",
+  "DienthoaiKH": "0385447813",
+  "Email": "Kiejet22@gmail.com",
+  "Ngaysinh": "2000-07-29"
+},{
+  "_id": {
+    "$oid": "623d68b729b7259bb28a003d"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "123",
+  "Taikhoan": "123123",
+  "Matkhau": "$2a$10$KMId0PmIa.G3N/SgMttM6Ox4rmaEeYCZ69vUPK/V0nebwez34h0.G",
+  "Role": false
+},{
+  "_id": {
+    "$oid": "623d691529b7259bb28a0044"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "Nguyễn Văn A",
+  "Taikhoan": "NVA",
+  "Matkhau": "$2a$10$bGfCykdPx13jAERmxF9d2OO6X/0lW02M1QKkp.OU/05Xu2FFLwVxC",
+  "Role": false
+},{
+  "_id": {
+    "$oid": "623d694c29b7259bb28a0047"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "123",
+  "Taikhoan": "1231233",
+  "Matkhau": "$2a$10$cregt7vEP3ga7NGEpeVT5O5vWKJJ1FBIUwkwjRNvPha7/yM/MDCIe",
+  "Role": false
+},{
+  "_id": {
+    "$oid": "623d6ad329b7259bb28a005b"
+  },
+  "Anh": "https://booking-storage-image.s3.amazonaws.com/1648192354570_nga-lao-ma-than.jpg",
+  "HoTen": "Nguyễn Trung Dũng",
+  "Taikhoan": "1234",
+  "Matkhau": "$2a$10$/kbUuzwfWYQfpvIxThJU4.Ct.kOW7gPnpOHA9MMIFSdzYLBU45yp2",
+  "Role": false,
+  "DiachiKH": "Ấp Gì Đó,Xã Gì Đó",
+  "DienthoaiKH": "0385447813",
+  "Email": "123@gmail.com",
+  "Ngaysinh": "2022-03-25"
+},{
+  "_id": {
+    "$oid": "623da9cf1767851c8ac18f5d"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "123",
+  "Taikhoan": "123123123",
+  "Matkhau": "$2a$10$g8g1IxpZQhdkwDDKivoC6O1AceMBEnHWlqWoPYGW357XlxXPyPUvO",
+  "Role": false
+},{
+  "_id": {
+    "$oid": "6241b2c5f278a48976487280"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "123",
+  "Taikhoan": "hajua",
+  "Matkhau": "$2a$10$Gra5jnpRmCkl.8tR3OkUUepdTCsTQchqJYKIESSKtNvtefhK4hxBK",
+  "Role": false
+},{
+  "_id": {
+    "$oid": "6245af77e7083c088f8b2034"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "Nguyễn Thành Phúc Hậu",
+  "Taikhoan": "Hajua2911",
+  "Matkhau": "$2a$10$8iCaUNC1lK6QBSCJFxX3ReJ5sHprAxyNXx6bZUcwmsV4pl5XE70Ca",
+  "Role": false,
+  "DiachiKH": "123",
+  "DienthoaiKH": "0385447813",
+  "Email": "nghianronline321@gmail.com",
+  "Ngaysinh": "2022-03-31"
+},{
+  "_id": {
+    "$oid": "624a64f8fd75ab18d36e9aa9"
+  },
+  "Anh": "https://storage.googleapis.com/chat-1e086.appspot.com/1649042418718_%E1%BA%A2nh%20%C4%90%E1%BA%A1i%20Di%E1%BB%87n.png",
+  "HoTen": "Nguyễn Đình Anh Kiệt",
+  "Taikhoan": "Kiezet",
+  "Matkhau": "$2a$10$SKBJHJqHFWkR7Vh6nuwrZeXu3FKyNvPPtvnbynC9CoQysjJePyrJi",
+  "Role": false,
+  "DiachiKH": "390, đường Trung Lập, Ấp Ràng, Xã Trung Lập Thượng, huyện Củ Chi, Thành Phố Hồ Chí Minh",
+  "DienthoaiKH": "03854478143",
+  "Email": "Kiejet2000@gmail.com",
+  "Ngaysinh": "2000-07-21"
+},{
+  "_id": {
+    "$oid": "624c3fe4808378f557baa95c"
+  },
+  "Anh": "https://firebasestorage.googleapis.com/v0/b/chat-1e086.appspot.com/o/default.jpg?alt=media&token=b2f7e2de-5a7e-4bd6-8c29-443015246589",
+  "HoTen": "Nguyễn Thành Phúc Hậu",
+  "Taikhoan": "2911",
+  "Matkhau": "$2a$10$VvmvX8/2.aGXU37CuW7nsO6r4EuekgPcS4s565hf6CYAqanO7Lw.a",
+  "Role": false,
+  "DiachiKH": "qưeqwe",
+  "DienthoaiKH": "23141416411",
+  "Email": "Kiejet22@gmail.com",
+  "Ngaysinh": "202000-02-10"
+}]

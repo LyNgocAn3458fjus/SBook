@@ -1,0 +1,124 @@
+[{
+  "_id": {
+    "$oid": "64c51af73dc88fae09b2c9c8"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-07-29T13:58:08.534Z"
+  },
+  "TongTien": 43.2,
+  "MaKH": "64c5021c3dc88fae09b2c8a4",
+  "Ngaygiao": {
+    "$date": "2023-07-29T13:58:38.894Z"
+  }
+},{
+  "_id": {
+    "$oid": "64cd0ffbd47a3387e55910cc"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-04T14:49:30.340Z"
+  },
+  "TongTien": 6.9,
+  "MaKH": "64cd0f0ad47a3387e55910a3",
+  "Ngaygiao": {
+    "$date": "2023-08-04T14:49:47.567Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ce380b4851698d4291d191"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-05T11:52:42.229Z"
+  },
+  "TongTien": 8.4,
+  "MaKH": "64ce37b54851698d4291d182",
+  "Ngaygiao": {
+    "$date": "2023-08-05T13:41:27.330Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ce51164851698d4291d1ed"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-05T13:39:30.485Z"
+  },
+  "TongTien": 20.700000000000003,
+  "MaKH": "64ce50be4851698d4291d1df",
+  "Ngaygiao": {
+    "$date": "2023-08-08T06:18:22.974Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ce53304851698d4291d240"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-05T13:48:18.832Z"
+  },
+  "TongTien": 49,
+  "MaKH": "64ce52d84851698d4291d232",
+  "Ngaygiao": {
+    "$date": "2023-08-05T13:51:11.491Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ce6efe6928ba263df55db3"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-05T15:47:04.515Z"
+  },
+  "TongTien": 20.700000000000003,
+  "MaKH": "64ce6e8f6928ba263df55da2",
+  "Ngaygiao": {
+    "$date": "2023-08-05T15:49:15.428Z"
+  }
+},{
+  "_id": {
+    "$oid": "64ce76ff6928ba263df55e0d"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-05T16:21:10.729Z"
+  },
+  "TongTien": 29.400000000000002,
+  "MaKH": "64ce76b06928ba263df55e00",
+  "Ngaygiao": {
+    "$date": "2023-08-05T16:23:08.176Z"
+  }
+},{
+  "_id": {
+    "$oid": "64d1de219ad47c5ef7d7e59f"
+  },
+  "Dathanhtoan": true,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-08-08T06:17:55.253Z"
+  },
+  "TongTien": 6.9,
+  "MaKH": "64c5021c3dc88fae09b2c8a4",
+  "Ngaygiao": {
+    "$date": "2023-11-03T06:15:01.646Z"
+  }
+},{
+  "_id": {
+    "$oid": "651e07d78bcac4ed9f431144"
+  },
+  "Dathanhtoan": false,
+  "Tinhtranggiaohang": true,
+  "Ngaydat": {
+    "$date": "2023-10-05T00:48:15.818Z"
+  },
+  "TongTien": 19.6,
+  "MaKH": "651e071b8bcac4ed9f43112b"
+}]
