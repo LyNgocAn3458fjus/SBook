@@ -4,11 +4,14 @@ const tacgiamodel = require("../model/tacgia.model");
 
 exports.GETALL = async (req, res) => {
   try {
-    const tacgia = await tacgiamodel.find({ status: false });
-    const NXB = await nhaxuatban.find({ status: false });
-    const chude = await chudemodel.find({ status: false });
-    res.send({ tacgia: tacgia, NXB: NXB, chude: chude });
+    const [tacgia, NXB, chude] = await Promise.all([
+      tacgiamodel.find({ status: false }),
+      nhaxuatban.find({ status: false }),
+      chudemodel.find({ status: false }),
+    ]);
+
+    return res.send({ tacgia, NXB, chude });
   } catch (error) {
-    res.send([{ Messager: "API LỖi HOẶC REQ.BODY Trống" }]);
+    return res.send([{ Messager: "API LỖi HOẶC REQ.BODY Trống" }]);
   }
 };

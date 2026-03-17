@@ -1,26 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookStoreAPI } from 'src/app/services/bookstore.services';
-import { reqDatHangnodategiao, reqCTDonHang } from '../../services/Classes/DonHang'
-import { __await } from 'tslib';
+import {
+  reqDatHangnodategiao,
+  reqCTDonHang,
+} from '../../services/Classes/DonHang';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-cartinfo',
   templateUrl: './cartinfo.component.html',
-  styleUrls: ['./cartinfo.component.css']
+  styleUrls: ['./cartinfo.component.css'],
 })
 export class CartinfoComponent implements OnInit {
+  constructor(
+    private bookapi: BookStoreAPI,
+    private router: Router,
+    private toastr: ToastrService,
+  ) {}
 
-  constructor(private bookapi: BookStoreAPI, private router: Router) { }
-  UserLogin: any
-  Date: any
-  NewDate: any
-  Book: any
-  IDMaDonHang: any
+  UserLogin: any;
+  Date: any;
+  NewDate: any;
+  Book: any;
+  IDMaDonHang: any;
   Total: number = 0;
   SoluongTon: number = 0;
   mess: any;
+
   vouchers: any[] = [];
-  newVoucher: any = {}; // Kiểu any cho newVoucher
   selectedVoucher: any = null;
   voucherCode: string = '';
   Promotion: number = 0;
@@ -28,41 +36,49 @@ export class CartinfoComponent implements OnInit {
   ngOnInit(): void {
     this.actionIn_ngOnInit();
     this.loadVouchers();
-
   }
 
   loadVouchers() {
-    this.bookapi.getAllVouchers().subscribe((data: any) => {
-      this.vouchers = data;
+    this.bookapi.getAllVouchers().subscribe({
+      next: (data: any) => {
+        this.vouchers = data;
+      },
+      error: (err) => console.error(err),
     });
   }
-
-  // Phương thức để lấy voucher dựa trên mã code
+//Lấy vocher bằng mã
   getVoucherByCode() {
-    this.bookapi.getVoucherByCode(this.voucherCode).subscribe((data: any) => {
-      this.selectedVoucher = data;
-  
-      // Kiểm tra xem có voucher nào được chọn hay không
-      if (this.selectedVoucher) {
-        // Kiểm tra xem tổng hóa đơn có lớn hơn hoặc bằng số tiền tối thiểu của voucher không
-        if (this.Total >= this.selectedVoucher.minOrderAmount && this.selectedVoucher.quantity > 0) {
-          // Tính khuyến mãi dựa trên phần trăm giảm giá và cập nhật lại Total
-          const discountPercentage = this.selectedVoucher.discountPercentage;
-          const discountAmount = (this.Total * discountPercentage) / 100;
-          this.Promotion = this.Total - discountAmount;
-        } else {
-          // Nếu tổng hóa đơn không đạt tiêu chuẩn số tiền tối thiểu, bạn có thể hiển thị một thông báo hoặc thực hiện một xử lý cụ thể ở đây.
-          alert("Bạn không đủ điều kiện để áp dụng voucher này.");
+    this.bookapi.getVoucherByCode(this.voucherCode).subscribe({
+      next: (data: any) => {
+        this.selectedVoucher = data;
+
+        if (this.selectedVoucher) {
+          if (
+            this.Total >= this.selectedVoucher.minOrderAmount &&
+            this.selectedVoucher.quantity > 0
+          ) {
+            const discountPercentage = this.selectedVoucher.discountPercentage;
+            const discountAmount = (this.Total * discountPercentage) / 100;
+
+            this.Promotion = this.Total - discountAmount;
+
+            // ✅ TOAST
+            this.toastr.success('Áp dụng voucher thành công 🎟');
+          } else {
+            this.toastr.error('Không đủ điều kiện dùng voucher');
+          }
         }
-      }
+      },
+      error: (err) => console.error(err),
     });
   }
-  
 
   actionIn_ngOnInit() {
-    sessionStorage.removeItem("Mess")
-    this.NewDate = new Date()
-    this.Date =  this.NewDate .toLocaleDateString();
+    sessionStorage.removeItem('Mess');
+
+    this.NewDate = new Date();
+    this.Date = this.NewDate.toLocaleDateString();
+
     this.getbook();
     this.Sum();
     this.checkUserLogin();
@@ -71,197 +87,255 @@ export class CartinfoComponent implements OnInit {
 
   get_Profile_User() {
     if (this.checkUserLogin()) {
-      this.bookapi.getProfile(JSON.parse(sessionStorage.getItem("UserLogin")!).id).subscribe(data => {
-        this.UserLogin = [data]
-        sessionStorage.setItem("UserLogin", JSON.stringify(data));
-      })
+      const user = JSON.parse(sessionStorage.getItem('UserLogin')!);
+
+      this.bookapi.getProfile(user.id).subscribe({
+        next: (data) => {
+          this.UserLogin = [data];
+          sessionStorage.setItem('UserLogin', JSON.stringify(data));
+        },
+        error: (err) => console.error(err),
+      });
     }
   }
 
   checkUserLogin() {
-    if (sessionStorage.getItem("UserLogin")) {
-      let data = JSON.parse(sessionStorage.getItem("UserLogin")!)
+    const user = sessionStorage.getItem('UserLogin');
+
+    if (user) {
+      const data = JSON.parse(user);
+
       if (data.id != null) {
         return true;
       }
-      return false;
     }
+
     return false;
   }
 
+  DatHang() {
+    if (this.Book == null) {
+      alert('Giỏ Hàng Hiện Tại Đang Trống');
 
-  async DatHang() {
-    let isNull_Session = this.Book == null
+      return;
+    }
 
-    if (isNull_Session) {
-      alert("Giỏ Hàng Hiện Tại Đang Trống\nVui Lòng Chọn Sách Bạn Muốn Mua")
-    } else {
-      let isNull_LoginSession = sessionStorage.getItem("UserLogin") == null
-      if (!isNull_LoginSession) {
+    const userSession = sessionStorage.getItem('UserLogin');
 
-        let data = JSON.parse(sessionStorage.getItem("UserLogin")!);
-        let isNull_login = data.id == null
-        if (data.Email == null) {
-          this.router.navigate(['profile']);
+    if (!userSession) {
+      this.router.navigate(['login']);
+      return;
+    }
+
+    const data = JSON.parse(userSession);
+
+    if (data.Email == null) {
+      this.router.navigate(['profile']);
+      return;
+    }
+
+    const arrayidBook: any[] = [];
+    const arraycountBook: any[] = [];
+
+    for (const id of this.Book) {
+      arrayidBook.push(id.idcart);
+      arraycountBook.push(id.count);
+    }
+
+    let Body = new reqDatHangnodategiao(
+      false,
+      false,
+      this.NewDate,
+      this.Promotion,
+      data.id,
+      arrayidBook,
+      arraycountBook,
+    );
+
+    if (this.selectedVoucher && this.selectedVoucher.code) {
+      this.bookapi
+        .applyVoucher({
+          voucherCode: this.selectedVoucher.code,
+          orderTotal: this.Total,
+        })
+        .subscribe({
+          next: (res) => console.log(res),
+          error: (err) => console.error(err),
+        });
+    }
+
+    this.bookapi.DatHang(Body).subscribe({
+      next: (data) => {
+        if (data.Messager != null) {
+          alert(data.Messager);
           return;
         }
-        if (!isNull_login) {
-          //
-          const arrayidBook: any[] = [];
-          const arraycountBook: any[] = [];
-          //Push IDSACH với Số lượng mua của cuốn sách để truyền xuống api để Kiểm Số lượng tồn
-          for (const id of this.Book) {
-            arrayidBook.push(id.idcart);
-            arraycountBook.push(id.count);
-          }
-          //
-          let Body = new reqDatHangnodategiao(false, false, this.NewDate, this.Promotion, data.id, arrayidBook, arraycountBook);
-          this.bookapi.applyVoucher({
-            voucherCode: this.selectedVoucher.code,
-            orderTotal: this.Total
-          }).subscribe(data => { 
-            console.log(data);
-          })
-         
-          this.bookapi.DatHang(Body).subscribe(data => {
-            //Nếu Có biến Mess Tức Có Sách Bị Vượt Quá Số Lượng Hiện Có Trong Kho Hàng
-            if (data.Messager != null) {
-              alert(data.Messager)
-            } else {
-              for (let book of this.Book) {
-                let body = new reqCTDonHang(data._id, book.idcart, book.count, book.unitprice);
-                this.bookapi.CTDatHang(body).subscribe(data => {
-                  if (data.Messager != null) {
-                    this.mess = data.Messager;
-                  } else {
-                    this.Promotion = 0;
-                    this.mess = "Đặt Hàng Thành Công\nXin Vui Lòng Kiểm Tra Lịch Sử Mua Hàng"
-                    if (this.UserLogin[0].Email != null || typeof this.UserLogin[0].Email != "undefined" || this.UserLogin[0].Email != "") {
-                      this.bookapi.SendMail(this.UserLogin[0].Email).subscribe(res => {
-                      })
-                    }
-                    sessionStorage.removeItem("listCart")
-                    this.Sum();
-                    this.Book = null
-                  }
-                })
+
+        for (let book of this.Book) {
+          let body = new reqCTDonHang(
+            data._id,
+            book.idcart,
+            book.count,
+            book.unitprice,
+          );
+
+          this.bookapi.CTDatHang(body).subscribe({
+            next: (data) => {
+              if (data.Messager != null) {
+                this.mess = data.Messager;
+              } else {
+                this.Promotion = 0;
+
+                this.mess = 'Đặt Hàng Thành Công';
+                this.toastr.success('Đặt hàng thông công');
+
+                if (this.UserLogin[0].Email) {
+                  this.bookapi.SendMail(this.UserLogin[0].Email).subscribe({
+                    next: () => {},
+                    error: (err) => console.error(err),
+                  });
+                }
+
+                sessionStorage.removeItem('listCart');
+
+                this.Sum();
+                this.Book = null;
               }
-            }
-          })
-
-        
-        } else {
-          this.router.navigate(['login']);
+            },
+          });
         }
-
-      } else {
-        this.router.navigate(['login']);
-      }
-    }
+      },
+      error: (err) => console.error(err),
+    });
   }
-
+  // xóa sản phẩm
   delete(cartID: any) {
-    if (sessionStorage.getItem("listCart")) {
-      const sessionCart = JSON.parse(sessionStorage.getItem("listCart")!)
-      for (let i = 0; i < sessionCart.length; i++) {
-        if (cartID === sessionCart[i].idcart) {
-          sessionCart.splice(i, 1);
-          sessionStorage.setItem("listCart", JSON.stringify(sessionCart));
-        }
-      }
-      if (sessionCart.length <= 0) {
-        this.Book = null
-        sessionStorage.removeItem("listCart")
-      } else {
-        this.Book = sessionCart
+    const sessionCart = JSON.parse(sessionStorage.getItem('listCart')!);
+
+    for (let i = 0; i < sessionCart.length; i++) {
+      if (cartID === sessionCart[i].idcart) {
+        sessionCart.splice(i, 1);
+
+        // ✅ TOAST
+        this.toastr.warning('Đã xóa sản phẩm khỏi giỏ', 'Thông báo');
       }
     }
+
+    if (sessionCart.length <= 0) {
+      this.Book = null;
+      sessionStorage.removeItem('listCart');
+    } else {
+      this.Book = sessionCart;
+      sessionStorage.setItem('listCart', JSON.stringify(sessionCart));
+    }
+
     this.Sum();
   }
 
   Sum() {
-    if (sessionStorage.getItem("listCart")) {
-      const sessionCart = JSON.parse(sessionStorage.getItem("listCart")!)
+    const cart = sessionStorage.getItem('listCart');
+
+    if (cart) {
+      const sessionCart = JSON.parse(cart);
+
       this.Total = sessionCart.reduce((acc: any, val: any) => {
-        return acc + (val.count * val.unitprice)
-      }, 0)
+        return acc + val.count * val.unitprice;
+      }, 0);
     } else {
       this.Total = 0;
     }
   }
 
   getbook() {
-    const sessionCart = JSON.parse(sessionStorage.getItem("listCart")!)
-    if (sessionCart != null) {
-      this.Book = sessionCart
+    const cart = sessionStorage.getItem('listCart');
+
+    if (cart) {
+      this.Book = JSON.parse(cart);
     } else {
-      this.Book = null
+      this.Book = null;
     }
   }
 
   lessProducts(i: any) {
-    const sessionCart = JSON.parse(sessionStorage.getItem("listCart")!)
-    for (let index = 0; index < sessionCart.length; index++) {
-      if (i == sessionCart[index].idcart) {
-        if (sessionCart[index].count == 1) {
-          sessionCart[index].count = 1
-        } else {
-          sessionCart[index].count--;
-        }
+    const sessionCart = JSON.parse(sessionStorage.getItem('listCart')!);
+
+    sessionCart.forEach((item: any) => {
+      if (i == item.idcart && item.count > 1) {
+        item.count--;
       }
-    }
-    sessionStorage.setItem("listCart", JSON.stringify(sessionCart));
-    this.Book = sessionCart
+    });
+
+    sessionStorage.setItem('listCart', JSON.stringify(sessionCart));
+
+    this.Book = sessionCart;
     this.Sum();
   }
 
   moreProducts(i: any) {
-    const sessionCart = JSON.parse(sessionStorage.getItem("listCart")!)
-    for (let index = 0; index < sessionCart.length; index++) {
-      if (i == sessionCart[index].idcart) {
-        if (sessionCart[index].count == sessionCart[index].Soluongton) {
-          alert("Hiện Sách " + sessionCart[index].Tensach + " Chỉ Còn: " + sessionCart[index].Soluongton + " Cuốn")
+    const sessionCart = JSON.parse(sessionStorage.getItem('listCart')!);
+
+    sessionCart.forEach((item: any) => {
+      if (i == item.idcart) {
+        if (item.count == item.Soluongton) {
+          alert(
+            'Hiện Sách ' +
+              item.Tensach +
+              ' Chỉ Còn: ' +
+              item.Soluongton +
+              ' Cuốn',
+          );
         } else {
-          sessionCart[index].count++;
+          item.count++;
         }
       }
-    }
-    sessionStorage.setItem("listCart", JSON.stringify(sessionCart));
-    this.Book = sessionCart
+    });
+
+    sessionStorage.setItem('listCart', JSON.stringify(sessionCart));
+
+    this.Book = sessionCart;
     this.Sum();
   }
 
   onCheckAll() {
-    let checkAll = <HTMLInputElement>document.getElementById("checkbox__all-product");
-    let checkItems = document.querySelectorAll("#checkbox__product") as NodeListOf<HTMLInputElement>;
+    let checkAll = <HTMLInputElement>(
+      document.getElementById('checkbox__all-product')
+    );
+
+    let checkItems = document.querySelectorAll(
+      '#checkbox__product',
+    ) as NodeListOf<HTMLInputElement>;
+
     if (checkAll && checkAll.checked) {
-      checkItems.forEach(item => item.checked = true);
+      checkItems.forEach((item) => (item.checked = true));
     } else {
-      checkItems.forEach(item => item.checked = false);
+      checkItems.forEach((item) => (item.checked = false));
     }
   }
 
   ifAllCheck() {
-    let checkAll = <HTMLInputElement>document.getElementById("checkbox__all-product");
-    if (checkAll && checkAll.checked) {
-      return true;
-    } else {
-      return false;
-    }
+    let checkAll = <HTMLInputElement>(
+      document.getElementById('checkbox__all-product')
+    );
+
+    return checkAll?.checked || false;
   }
 
   onDeleteAll() {
-    sessionStorage.removeItem("listCart");
-    let checkAll = <HTMLInputElement>document.getElementById("checkbox__all-product");
-    checkAll.checked = false;
+    sessionStorage.removeItem('listCart');
+
+    this.toastr.warning('Đã xóa toàn bộ giỏ hàng', 'Thông báo');
+
+    let checkAll = <HTMLInputElement>(
+      document.getElementById('checkbox__all-product')
+    );
+
+    if (checkAll) checkAll.checked = false;
+
     this.getbook();
     this.Sum();
   }
 
   ifEmpty() {
-    if (this.Book == null) {
-      return true
-    }
-    else return false;
+    return this.Book == null;
   }
 }

@@ -96,20 +96,20 @@ export class AdminComponent implements OnInit {
     this.Action_ngOnInit();
     this.loadVouchers();
   }
-  
+
   loadVouchers() {
     this.bookapi.getAllVouchers().subscribe((data: any) => {
       this.vouchers = data;
     });
   }
-  
+
   createVoucher() {
     this.bookapi.createVoucher(this.newVoucher).subscribe(() => {
       this.newVoucher = {}; // Xóa dữ liệu trong form
       this.loadVouchers();
     });
   }
-  
+
   deleteVoucher(voucherId: string) {
     this.bookapi.deleteVoucher(voucherId).subscribe(() => {
       this.loadVouchers();
@@ -515,23 +515,46 @@ export class AdminComponent implements OnInit {
   //Thêm Sách Mới
   InsertBook() {
     let check = []
-    check.push(!(this.TenSach == '')); check.push(!(this.Giaban == '')); check.push(!(this.Mota == ''));
-    check.push(!(this.imgChoose == '')); check.push(!(this.Soluongton == '')); check.push(!(this.IDCD == []));
-    check.push(!(this.IDNXB == '')); check.push(!(this.IDTG == '')); check.push(!(this.Giaban == 0));
+    check.push(!(this.TenSach == ''));
+    check.push(!(this.Giaban == ''));
+    check.push(!(this.Mota == ''));
+    check.push(!(this.imgChoose == ''));
+    check.push(!(this.Soluongton == ''));
+
+    // ✅ FIX CHUẨN (QUAN TRỌNG)
+    check.push(this.IDCD.length > 0);
+
+    check.push(!(this.IDNXB == ''));
+    check.push(!(this.IDTG == ''));
+    check.push(!(this.Giaban == 0));
     check.push(!(this.Soluongton == 0));
+
     if (check.every(va => va === true)) {
 
       let formdata = new FormData()
       for (let i = 0; i < this.imgChoose.files.length; i++) {
         formdata.append("img", this.imgChoose.files[i]);
       }
+
       this.bookapi.UploadImage(formdata).subscribe(res => {
         let linkAnh = this.bookapi.url + res.data;
         console.log("linkAnh", linkAnh);
-        let body = new reqinsertbook(this.TenSach, this.Giaban, this.Mota, linkAnh, this.Soluongton, this.IDCD, this.IDNXB, this.IDTG);
+
+        let body = new reqinsertbook(
+          this.TenSach,
+          this.Giaban,
+          this.Mota,
+          linkAnh,
+          this.Soluongton,
+          this.IDCD,
+          this.IDNXB,
+          this.IDTG
+        );
+
         this.bookapi.InsertBook(body).subscribe(da => {
           if (da._id != null) {
             alert("Thêm Thành Công")
+
             this.Categoryselected = 'option2';
             this.Authorselected = 'option2';
             this.NXBselected = 'option2';
@@ -542,14 +565,16 @@ export class AdminComponent implements OnInit {
             this.Soluongton = ''
             this.img = ''
             this.multiselect = []
+
             this.GetHangTon();
+
             document.getElementsByTagName('input')[16].value = ''
           } else {
             alert("Thêm Thất Bại")
           }
-
         })
       })
+
     } else {
       alert("Vui Lòng Điền Đầy Đủ Thông Tin");
     }

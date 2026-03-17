@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookStoreAPI } from 'src/app/services/bookstore.services';
 import { reqRegister, resRegister } from 'src/app/services/Classes/Login';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private bookstore: BookStoreAPI, private router: Router) { }
+  constructor(
+    private bookstore: BookStoreAPI,
+    private router: Router,
+    private toastr: ToastrService
+  ) { }
 
   username = '';
   password = '';
@@ -18,27 +23,56 @@ export class SignupComponent implements OnInit {
   confirmpassword = '';
 
   resRegister: resRegister | undefined;
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void {}
 
   clickme() {
+
     let check = []
-    check.push(!(this.fullname == '')); check.push(!(this.password == ''));
-    check.push(!(this.username == '')); check.push(!(this.confirmpassword == ''));
+    check.push(!(this.fullname == ''));
+    check.push(!(this.password == ''));
+    check.push(!(this.username == ''));
+    check.push(!(this.confirmpassword == ''));
+
     if (check.every(va => va === true)) {
-      let bodyRegister = new reqRegister(this.fullname, this.username, this.password, this.confirmpassword);
+
+      let bodyRegister = new reqRegister(
+        this.fullname,
+        this.username,
+        this.password,
+        this.confirmpassword
+      );
+
       this.bookstore.postRegister(bodyRegister)
-        .subscribe(
-          data => {
+        .subscribe({
+
+          next: (data) => {
+
             this.resRegister = data;
-            alert(this.resRegister.Messenger);
-            if (this.resRegister.Messenger == "Đăng Ký Thành Công") {
+
+            this.toastr.info(this.resRegister?.Messenger || '');
+
+            if (this.resRegister?.Messenger == "Đăng Ký Thành Công") {
               this.router.navigate(['/login']);
             }
+
+          },
+
+          error: (err) => {
+
+            this.toastr.error("Đăng ký thất bại");
+
+            console.error(err);
+
           }
-        )
+
+        })
+
     } else {
-      alert("Vui Lòng Điền Đầy Đủ Thông Tin")
+
+      this.toastr.warning("Vui Lòng Điền Đầy Đủ Thông Tin")
+
     }
+
   }
 }

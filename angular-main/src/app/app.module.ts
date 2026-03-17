@@ -1,5 +1,7 @@
+//Nơi khai báo cho các module
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +22,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { SigninComponent } from './pages/signin/signin.component';
 
-
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -33,7 +34,7 @@ import { BookdetailsComponent } from './pages/bookdetails/bookdetails.component'
 import { CartinfoComponent } from './pages/cartinfo/cartinfo.component';
 import { HistorypayComponent } from './pages/historypay/historypay.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+//declarations nơi khai báo các component
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     Ng2OrderModule,
     MatTabsModule,
     CarouselModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    ToastrModule.forRoot({ positionClass: 'toast-top-center'})
   ],
   providers: [AuthGuard, isLogined],
   bootstrap: [AppComponent]

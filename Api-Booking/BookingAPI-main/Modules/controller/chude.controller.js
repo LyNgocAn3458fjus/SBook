@@ -1,122 +1,130 @@
 const chudemodel = require("../model/chude.model");
 const sachmodel = require("../model/sach.model");
 
-//Get List
+
+// Get list
 exports.getAll = async (req, res) => {
-  var data = await chudemodel.find({ status: false });
-  res.send(data);
+  try {
+    const data = await chudemodel.find({ status: false });
+    res.send(data);
+  } catch (error) {
+    res.send({ Messager: "API Lỗi" });
+  }
 };
 
-//Get by id
+
+// Get by id
 exports.getbyid = async (req, res) => {
   try {
-    if (typeof req.params.id == "string" && req.params.id != null) {
-      var data = await chudemodel.findById(req.params.id);
-      res.send(data);
-    } else {
-      res.send({ Messager: "Id Sai Định Dạng Hoặc Null" });
+    const { id } = req.params;
+
+    if (!id || typeof id !== "string") {
+      return res.send({ Messager: "Id Sai Định Dạng Hoặc Null" });
     }
+
+    const data = await chudemodel.findById(id);
+    res.send(data);
+
   } catch (error) {
     res.send({ Messager: "API LỖi HOẶC REQ.BODY Trống" });
   }
 };
 
-//Get by name
+
+// Get by name
 exports.getbyname = async (req, res) => {
   try {
-    if (typeof req.params.name == "string" && req.params.name != null) {
-      chudemodel.find(
-        { $text: { $search: `\"${req.params.name}\"` }, status: false },
-        (err, data) => {
-          if (err) throw err;
+    const { name } = req.params;
 
-          res.send(data);
-        }
-      );
-    } else {
-      res.send({ Messager: "name Sai Định Dạng Hoặc Null" });
+    if (!name || typeof name !== "string") {
+      return res.send({ Messager: "name Sai Định Dạng Hoặc Null" });
     }
+
+    const data = await chudemodel.find({
+      $text: { $search: `"${name}"` },
+      status: false,
+    });
+
+    res.send(data);
+
   } catch (error) {
     res.send({ Messager: "API LỖi HOẶC REQ.BODY Trống" });
   }
 };
 
-//Thêm Mới
+
+// Insert
 exports.insert = async (req, res) => {
   try {
-    if (typeof req.body.TenChuDe == "string" && req.body.TenChuDe) {
-      let data = await chudemodel.find({
-        $text: { $search: `\"${req.body.TenChuDe}\"` },
-      });
-      if (data.length <= 0) {
-        var datachude = new chudemodel(req.body);
-        datachude.save();
-        res.send(datachude);
-      } else {
-        res.send({ Messager: "Không Thể Thêm Chủ Đề Đã Có" });
-      }
-    } else {
-      res.send({ Messager: "TenChuDe Sai Định Dạng Hoặc Null" });
+    const { TenChuDe } = req.body;
+
+    if (!TenChuDe || typeof TenChuDe !== "string") {
+      return res.send({ Messager: "TenChuDe Sai Định Dạng Hoặc Null" });
     }
+
+    const check = await chudemodel.find({
+      $text: { $search: `"${TenChuDe}"` },
+    });
+
+    if (check.length > 0) {
+      return res.send({ Messager: "Không Thể Thêm Chủ Đề Đã Có" });
+    }
+
+    const datachude = new chudemodel(req.body);
+    await datachude.save();
+
+    res.send(datachude);
+
   } catch (error) {
     res.send({ Messager: "API LỖi HOẶC REQ.BODY Trống" });
   }
 };
 
-//Cập Nhật
+
+// Update
 exports.update = async (req, res) => {
   try {
-    const check = [];
-    let isNull = req.body.TenChuDe == null;
-    check.push(!isNull);
-    let isNull_id = req.body.id == null;
-    check.push(!isNull_id);
-    let isnone_id = req.body.id == "";
-    check.push(!isnone_id);
-    let isnode = req.body.TenChuDe == "";
-    check.push(!isnode);
-    let isString = typeof req.body.TenChuDe == "string";
-    check.push(isString);
+    const { id, TenChuDe } = req.body;
 
-    const isTrue = (value) => value === true;
-    if (check.every(isTrue)) {
-      chudemodel.findByIdAndUpdate(
-        req.body.id,
-        {
-          TenChuDe: req.body.TenChuDe,
-        },
-        (err, data) => {
-          if (err) throw err;
-          res.send(data);
-        }
-      );
-    } else {
-      res.send({ Messager: "ReqBody Lỗi" });
+    if (!id || !TenChuDe || typeof TenChuDe !== "string") {
+      return res.send({ Messager: "ReqBody Lỗi" });
     }
+
+    const data = await chudemodel.findByIdAndUpdate(
+      id,
+      { TenChuDe: TenChuDe },
+      { new: true }
+    );
+
+    res.send(data);
+
   } catch (error) {
     res.send({ Messager: "API LỖi HOẶC REQ.BODY Trống" });
   }
 };
 
-//Xóa theo id
+
+// Delete
 exports.deletebyid = async (req, res) => {
   try {
-    let check = [];
-    let isNull = req.params.id == null;
-    check.push(!isNull);
-    let isnone_id = req.params.id == "";
-    check.push(!isnone_id);
-    let isString = typeof req.params.id == "string";
-    check.push(isString);
+    const { id } = req.params;
 
-    let isTrue = (value) => value === true;
-    if (check.every(isTrue)) {
-      await sachmodel.updateMany({ MaCD: req.params.id }, { status: true });
-      await chudemodel.findByIdAndUpdate(req.params.id, { status: true });
-      res.send({ Messager: "Xóa Thành Công" });
-    } else {
-      res.send({ Messager: "ReqBody Lỗi" });
+    if (!id || typeof id !== "string") {
+      return res.send({ Messager: "ReqBody Lỗi" });
     }
+
+    await sachmodel.updateMany(
+      { MaCD: id },
+      { status: true }
+    );
+
+    await chudemodel.findByIdAndUpdate(
+      id,
+      { status: true }
+    );
+
+    res.send({ Messager: "Xóa Thành Công" });
+
   } catch (error) {
     res.send({ Messager: "API LỖi HOẶC REQ.BODY Trống" });
   }

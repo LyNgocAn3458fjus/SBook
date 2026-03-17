@@ -54,7 +54,7 @@ require("./Modules/routes/Banner.route")(app);
 require("./Modules/routes/UploadImage.route")(app);
 require("./Modules/routes/GETCDTGNXB.route")(app);
 require("./Modules/routes/Vouchers.route")(app);
-
+require("./Modules/routes/SendMail.route")(app);
 
 // ================= MONGODB CONNECT =================
 

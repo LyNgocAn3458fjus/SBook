@@ -8,7 +8,7 @@ import { reqpass, respass } from './Classes/changepass';
 import { reqCTDonHang, resCTDonHang, resDatHang, reqChang_Stautus } from "./Classes/DonHang";
 import { resALL, resNXB } from "./Classes/NXB";
 import { resAuthor } from "./Classes/author";
-
+// nơi giao tiếp với backend và chưa logic chung, gọi API
 @Injectable({
     providedIn: 'root'
 })
@@ -95,12 +95,12 @@ export class BookStoreAPI {
     UploadImage(body: FormData) {
         return this.httclient.post<resimg>(this.url + "/upload-image", body);
     }
-    // cập nhật tài khoản put 
+    // cập nhật tài khoản put
     putupdateprofile(bodyProfile: any) {
 
         return this.httclient.put<resprofile>(this.url + "/khachhang", bodyProfile);
     }
-    //cập nhật pass put 
+    //cập nhật pass put
     putupdatapass(bodyProfile: reqpass) {
 
         return this.httclient.put<respass>(this.url + "/khachhangmk", bodyProfile);

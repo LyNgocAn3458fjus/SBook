@@ -1,370 +1,257 @@
+/* ===== CONTAINER ===== */
 .Cart__Container{
-    width: 80%;
-    margin: 50px auto;
-    height: fit-content;
-    padding: 50px 0;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+/* ===== BODY LAYOUT ===== */
+.Cart__Body{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* ===== LEFT: PRODUCTS ===== */
+.Cart__Products{
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+.Cart__Products-Header{
+    display: grid;
+    grid-template-columns: 50px 1fr 120px 120px 50px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+/* ITEM */
+.Cart__Products-item{
+    display: grid;
+    grid-template-columns: 50px 80px 1fr 200px;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+/* IMAGE */
+.Img__Book{
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* NAME */
+.Cart__Products-BookName{
+    font-weight: 600;
+}
+
+/* RIGHT GROUP */
+.Cart__Products-group-product-info{
     display: flex;
-    flex-flow: column nowrap;
-    min-height: 80vh;
-    animation: toRightVisible 1s 1 ease-in-out forwards;
-}
-    .Cart__Container h3{
-        font-weight: 600;
-    }
-    .Cart__Body{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .Cart__Products{
-        width: 65%;
-    }
-        .Cart__Products-Header{
-            display: flex;
-            align-items: center !important;
-            border-radius: .5rem;
-            background-color: black;
-            color: white;
-            font-weight: 400;
-            height: 30px;
-        }
-            .Cart__Products-Header span{
-                flex-basis: 58%;
-            }
-            .Title__Count{
-                text-align: center;
-                flex-basis: 15%;
-            }
-            .Title__Price{
-                flex-basis: 12%;
-                text-align: center;
-            }
-            .Checkbox__All-Product{
-                display: flex;
-                align-items: center;
-            }
-        .Cart__Products-Body{
-            margin-top: 10px;
-            border-top: 1px solid rgba(109, 109, 109, 0.308);
-            border-bottom: 1px solid rgba(109, 109, 109, 0.308);
-        }
-            .Cart__Products-item{
-                display: flex;
-                align-items: center;
-                padding: 20px 0;
-            }
-                .checkbox__product,
-                .Checkbox__All-Product{
-                 flex-basis: 8%;   
-                }
-                .imgbook{
-                    flex-basis: 16%;
-                }
-                    .Img__Book{
-                        width: 100px;
-                        height: 100px;
-                    }
-                .Cart__Products-group-product-info{
-                    display: flex;
-                    flex-basis: 35%;
-                    align-items: center;
-                    justify-content: space-around;
-                }
-                    .Cart__Products-group-product-info span{
-                        color: red;
-                        font-weight: 600;
-                    }
-                    .Cart__Products-BookName{
-                        text-decoration: none;
-                        cursor: pointer;
-                        color: black;
-                        flex-basis: 44%;
-                        display:-webkit-box;
-                        -webkit-line-clamp:2;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        word-break: break-word;
-                    }
-                    .Cart__Products-Count{
-                        border: 1px solid gray;
-                    }
-                    .Cart__Products-Count,
-                    .Cart__Products-Button{
-                        width: max-content;
-                        height: max-content;
-                    }
-                        .Cart__Products-Button button{
-                            border: none;
-                            background-color: rgba(230, 228, 228, 0.562);
-                        }
-                        .Cart__Products-Button input{
-                            border: none;
-                            width: 50px;
-                            text-align: center;
-                        }
-        .Cart__Products-Empty{
-            margin: 30px auto;
-            width: fit-content;
-            height: 180px;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-between;
-            align-items: center;
-            animation: toVisible 2s 1 forwards;
-        }
-            .Cart__Products-Empty-image{
-                width: 150px;
-                height: 150px;
-                overflow: hidden;
-                border-radius: 10rem;
-            }
-                .Cart__Products-Empty-image img{
-                    width: 100%;
-                    height: 100%;
-                }
-                .Cart__Products-Empty span{
-                    color: red;
-                    font-weight: 600;
-                }
-    .Cart__Products-Footer,
-    .Cart__Bill-Pay-BtnPay{
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        color: white;
-        background-color: rgba(255, 0, 0, 0.644);
-        text-align: center;
-        width: fit-content;
-        padding: 10px;
-        height: 30px;
-        border-radius: .3rem;
-        margin: 20px 0 20px 0;
-        transition: 1s;
-    }
-        .Cart__Products-Footer:hover,
-        .Cart__Bill-Pay-BtnPay:hover{
-            background-color: rgb(255, 0, 0);
-            box-shadow: 0 0 10px 0 red;
-        }
-    .Cart__Bill{
-        width: 30%;
-        height: fit-content;
-    }
-        .Cart__Bill h2{
-            width: fit-content;
-            border-bottom: 1px solid rgba(109, 109, 109, 0.308);
-            font-weight: 600;
-            user-select: none;
-        }
-        .Cart__Bill-Info{
-            user-select: none;
-            display: flex;
-            flex-flow: column;
-            height:fit-content;
-            padding: 0 0 20px 0;
-            justify-content: space-around;
-            border-bottom: 1px solid rgba(109, 109, 109, 0.308);
-        }
-            .Cart__Bill-Info-Info-Name,
-            .Cart__Bill-Info-Info-Email,
-            .Cart__Bill-Info-Info-Phone,
-            .Cart__Bill-Info-Date{
-                line-height: 25px;
-            }
-        .Cart__Bill-Pay{
-            display: flex;
-            justify-content: space-between;
-            margin: 5px 0 20px 0;
-        }
-            .Cart__Bill-Pay-Price{
-                display: flex;
-                flex-direction: column;
-                font-weight: 600;
-                font-size: 15px;
-                justify-content: center;
-                user-select: none;
-            }
-            .Cart__Bill-Pay-Price span{
-                color: red;
-                font-size: 20px;
-                margin-top: 5px;
-            }
-    mat-icon{
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: 1s;
-    }
-        mat-icon:hover{
-            color: white;
-            border-radius: 1rem;
-            background-color: red;
-        }
-@media screen and (max-width:821px) {
-    .Cart__Products-Header span{
-        flex-basis: 45%;
-    }
-    .Title__Count{
-        flex-basis: 25%;
-    }
-}
-@media screen and (max-width:415px) {
-    .Cart__Body{
-        flex-flow: column nowrap;
-    }
-    .Cart__Products-Header,
-    .Cart__Container,
-    .Cart__Products,
-    .Cart__Bill{
-        width: 100%;
-        border-radius: 0rem;
-    }
-        .Cart__Container h3{
-            margin: 10px;
-        }
-        .Cart__Products-Footer{
-            margin-left: 10px;
-        }
-        .Cart__Bill{
-            padding: 0 10px 0 10px;
-        }
-    .Cart__Products-Body{
-        border-radius: 0rem;
-    }
-        .Title__Count,
-        .Title__Price{
-            display: none;
-        }
-        .Cart__Products-item{
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .imgbook img{
-            height: 130px;
-        }
-            .Cart__Products-group-product-info{
-                margin: 20px 0 0 10px ;
-                justify-content: space-around;
-                flex-basis: 70%;
-            }
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* QUANTITY */
+.Cart__Products-Button{
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
 
+.Cart__Products-Button button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #f5f5f5;
+    cursor: pointer;
+}
 
-/* Phần tiêu đề */
-.voucher-list h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Bảng voucher */
-  table {
+.Cart__Products-Button input{
+    width: 40px;
+    text-align: center;
+    border: none;
+}
+
+/* DELETE ICON */
+mat-icon{
+    cursor: pointer;
+    color: #ff4d4f;
+}
+
+/* ===== EMPTY (MÈO XỊN PRO MAX) ===== */
+.Cart__Products-Empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    color: #999;
+}
+
+/* KHUNG TRÒN */
+.Cart__Products-Empty-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #f5f5f5, #ffffff);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+    /* animation nhẹ */
+    animation: floatCat 3s ease-in-out infinite;
+    transition: 0.3s;
+}
+
+/* IMAGE */
+.Cart__Products-Empty-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* HOVER */
+.Cart__Products-Empty-image:hover{
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+.Cart__Products-Empty span{
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes floatCat{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* ===== RIGHT: BILL ===== */
+.Cart__Bill{
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* BILL INFO */
+.Cart__Bill-Info span{
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* PAYMENT */
+.payment-method{
+    margin: 10px 0;
+}
+
+.payment-method label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* TOTAL */
+.Cart__Bill-Pay-Price{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* BUTTON PAY */
+.Cart__Bill-Pay-BtnPay{
+    margin-top: 15px;
+    background: #ff4d4f;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Cart__Bill-Pay-BtnPay:hover{
+    background: #e60023;
+    transform: translateY(-2px);
+}
+
+/* ===== VOUCHER ===== */
+.get-voucher-form,
+.result,
+.voucher-list{
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* INPUT */
+.get-voucher-form input{
+    padding: 8px;
+    margin-left: 10px;
+}
+
+/* BUTTON */
+.get-voucher-form button{
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #1677ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* TABLE */
+.voucher-list table{
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ccc;
-  }
-  
-  /* Header của bảng */
-  thead {
-    background-color: #f0f0f0;
-  }
-  
-  th {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  /* Dòng của bảng */
-  tbody {
-    border-top: 1px solid #ccc;
-  }
-  
-  tr {
-    border-bottom: 1px solid #ccc;
-  }
-  
-  td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  /* Nút Sửa và Xóa */
-  button {
-    background-color: #337ab7;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #23527c;
-  }
-
-
-
-
-/* Check box styles */
-.checkbox{
-    margin: 0 10px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    display: grid;
-    place-content: center;
 }
-    .checkbox::before{
-        content: "";
-        width: 0.65em;
-        height: 0.65em;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-        transform: scale(0);
-        transform-origin: bottom left;
-        transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em var(--form-control-color);
-        /* Windows High Contrast Mode */
-        background-color: CanvasText;
-    }
-    .checkbox:checked{
-        background-color: red;
-    }
-    .checkbox:checked::before{
-        transform: scale(1);
-    }
-    .checkbox:focus{
-        outline: max(2px, 0.15em) solid currentColor;
-        outline-offset: max(2px, 0.15em);
+
+.voucher-list th,
+.voucher-list td{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px){
+    .Cart__Body{
+        grid-template-columns: 1fr;
     }
 
+    .Cart__Products-item{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-    /* Animation */
-    @keyframes toRightVisible{
-        from{
-            opacity: 0;
-            transform: translateX(-150px);
-        }
-        to{
-            opacity: 1;
-            transform: translateX(0px);
-        }
+    .Cart__Products-group-product-info{
+        flex-direction: column;
+        gap: 10px;
     }
-    @keyframes toVisible{
-        from{
-            opacity: 0;
-        }
-        to{
-            opacity: 1;
-        }
-    }
+}
