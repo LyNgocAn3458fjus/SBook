@@ -7,6 +7,7 @@
 
 /* ===== BODY LAYOUT ===== */
 .Cart__Body{
+  background-color: #EFE9E3;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
@@ -14,7 +15,7 @@
 
 /* ===== LEFT: PRODUCTS ===== */
 .Cart__Products{
-    background: #fff;
+    background: #E1D9BC;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.05);
@@ -149,7 +150,7 @@ mat-icon{
 
 /* ===== RIGHT: BILL ===== */
 .Cart__Bill{
-    background: #fff;
+    background: #E1D9BC;
     border-radius: 12px;
     padding: 20px;
     height: fit-content;
@@ -203,7 +204,7 @@ mat-icon{
 .result,
 .voucher-list{
     margin-top: 30px;
-    background: #fff;
+    background: #E1D9BC;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.05);

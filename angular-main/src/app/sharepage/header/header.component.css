@@ -5,7 +5,15 @@
     width: 100vw;
     top: 0;
     position: fixed;
+    /* background-color: ; */
 
+}
+.nav-link{
+  font-weight:500;
+  font-size: large;
+}
+.bg-nav-primary{
+  background-color: #e4cb85;
 }
 .navbar-brand{
     display: flex;
@@ -77,3 +85,77 @@
     .dropdown-item{
         cursor: pointer !important;
     }
+
+
+
+    /* Dropdown wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* Toggle button */
+.Account {
+  background-color: #e4cb85;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.Account:hover {
+  background-color: #f0d77a;
+}
+
+/* Menu */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background-color: #915f23;
+  min-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 8px 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Hiển thị menu khi hover nút Account */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Menu items */
+.dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #F0F0DB;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(90deg, #e4cb85, #915f23);
+  color: #fff;
+  transform: translateX(5px);
+  border-radius: 5px;
+}
+
+/* Divider */
+.dropdown-divider {
+  height: 1px;
+  margin: 5px 0;
+  background-color: rgba(244,221,91,0.6);
+}

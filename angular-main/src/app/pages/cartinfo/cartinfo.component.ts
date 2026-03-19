@@ -187,7 +187,7 @@ export class CartinfoComponent implements OnInit {
                 this.Promotion = 0;
 
                 this.mess = 'Đặt Hàng Thành Công';
-                this.toastr.success('Đặt hàng thông công');
+                this.toastr.success('Đặt hàng thành công');
 
                 if (this.UserLogin[0].Email) {
                   this.bookapi.SendMail(this.UserLogin[0].Email).subscribe({

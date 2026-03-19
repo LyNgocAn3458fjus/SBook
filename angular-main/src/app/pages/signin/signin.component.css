@@ -1,12 +1,12 @@
 
-  .center {
-    margin: 150px auto;
-    box-shadow: 0 0 20px 0 rgba(165, 163, 163, 0.473);
-    width: 400px;
-    background: white;
-    border-radius: 10px;
-    animation: toRight 1s 1 ease-in-out forwards;
-  }
+.center {
+  margin: 150px auto;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(165, 163, 163, 0.473);
+  background: #E1D9BC;
+  animation: toRight 1s 1 ease-in-out forwards;
+}
 
   .Logo {
     display: flex;
@@ -50,7 +50,7 @@
     position: absolute;
     top: 50%;
     left: 5px;
-    color: #adadad;
+    color: #393E46;
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
@@ -91,24 +91,34 @@
   }
 
   input[type="submit"] {
-    width: 100%;
-    height: 50px;
-    border: 1px solid;
-    background: linear-gradient(160deg, rgba(0, 0, 0, 0.705), rgba(167, 166, 166, 0.562));
-    border-radius: 25px;
-    font-size: 18px;
-    color: #e9f4fb;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-    margin-bottom: 80px;
-  }
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background-image: radial-gradient(
+    circle 298px at -4.6% 85%,
+    rgba(244,221,91,0.84) 14.9%,
+    rgba(244,135,54,0.86) 90%
+  ); /* gradient mới bạn muốn */
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-bottom: 80px;
+  box-shadow: 0 4px 6px rgba(145, 95, 35, 0.25);
+}
 
-  input[type="submit"]:hover {
-
-    background: linear-gradient(160deg, rgba(0, 0, 0, 0.342), rgba(167, 166, 166, 0.849));
-
-  }
+input[type="submit"]:hover {
+  background-image: radial-gradient(
+    circle 298px at -4.6% 85%,
+    rgba(255,231,120,0.9) 14.9%,
+    rgba(244,135,54,0.95) 90%
+  ); /* hover sáng hơn một chút */
+  box-shadow: 0 6px 10px rgba(145, 95, 35, 0.35);
+  transform: translateY(-2px);
+}
 @keyframes toRight{
     from{
         transform: translateX(-300%);

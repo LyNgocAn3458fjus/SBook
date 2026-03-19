@@ -6,24 +6,28 @@
     padding-right: 50px;
     font-size: 15px;
     color: white;
-    background-color: black;
+    background-color: #915f23;
     padding-top: 50px;
     padding-bottom: 80px;
     font-family: 'Nunito Sans', sans-serif;
 }
+
 .Footer__Header{
     margin-bottom: 30px;
 }
+
 h3{
     border-bottom: 2px solid white;
     width: fit-content;
     user-select: none;
 }
+
 .Footer_Body{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .Footer__About-Logo {
     display: flex;
     align-items: center;
@@ -33,10 +37,12 @@ h3{
     text-decoration: none;
     color: white;
 }
+
 .Footer__About-Contact{
     display: flex;
     flex-direction: column;
 }
+
 .Logo_icon {
     font-size: 30px;
 }
@@ -54,9 +60,33 @@ h3{
     text-decoration: none;
     color: white;
 }
+
 .Footer__About-Link{
     list-style-type: none;
     text-decoration: none;
     color: white;
     margin-bottom: 5px;
+}
+
+.Footer__About-Link:hover {
+    color: #e4cb85;
+    transform: translateX(3px);
+    transition: all 0.3s ease;
+}
+
+.Social:hover {
+    color: #e4cb85;
+    transform: translateX(3px);
+    transition: all 0.3s ease;
+}
+
+h3:hover {
+    color: #e4cb85;
+    cursor: default;
+}
+
+.Footer__About-Logo:hover {
+    color: #F0F0DB;
+    text-shadow: 0 0 8px rgba(255, 235, 150, 0.6);
+    transition: all 0.3s ease;
 }
