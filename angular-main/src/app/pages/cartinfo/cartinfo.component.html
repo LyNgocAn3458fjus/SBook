@@ -1,199 +1,188 @@
 <div class="Cart__Container">
-    <h3>GIỎ HÀNG</h3>
-    <h3>{{mess}}</h3>
-    <div class="Cart__Body">
-        <div class="Cart__Products">
-            <div class="Cart__Products-Header">
-                <div class="Checkbox__All-Product">
-                    <input type="checkbox" name class="checkbox"
-                        id="checkbox__all-product" (click)="onCheckAll()">
-                </div>
-                <span>Chọn tất cả (1 sản phẩm)</span>
-                <div class="Title__Count">Số lượng</div>
-                <div class="Title__Price">Giá</div>
-                <div style="flex-basis: 5%;"></div>
-            </div>
-            <div class="Cart__Products-Empty" *ngIf="ifEmpty()">
-                <div class="Cart__Products-Empty-image">
-                    <img
-                        src="https://i.pinimg.com/originals/ec/0c/0c/ec0c0c652f7a9fb965bf08f45c4403fe.gif"
-                        alt>
-                </div>
-                <span>Bạn hiện chưa chọn sách nào</span>
-            </div>
-            <div class="Cart__Products-Body" *ngFor="let book of Book">
-                <div class="Cart__Products-item">
-                    <div class="checkbox__product">
-                        <input type="checkbox" name class="checkbox"
-                            id="checkbox__product">
-                    </div>
-                    <div class="imgbook">
-                        <img src="{{book.Anh}}" class="Img__Book" alt>
-                    </div>
-                    <a class="Cart__Products-BookName">
-                        {{book.Tensach}}
-                    </a>
-                    <div class="Cart__Products-group-product-info">
-
-                        <div class="Cart__Products-Count">
-                            <div class="Cart__Products-Button">
-                                <button (click)="lessProducts(book.idcart)">
-                                    <img
-                                        src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg"
-                                        alt="remove-icon" width="20" height="20">
-                                </button>
-                                <input type="text" readonly
-                                    value="{{book.count}}" id="inputNum"
-                                    placeholder="1"
-                                    class="input">
-                                <button (click)="moreProducts(book.idcart)">
-                                    <img
-                                        src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-add.svg"
-                                        alt="add-icon" width="20" height="20">
-                                </button>
-                            </div>
-                        </div>
-                        <span>{{book.unitprice * book.count|number:'1.3'}}đ</span>
-                        <mat-icon (click)="delete(book.idcart)">remove_shopping_cart</mat-icon>
-                    </div>
-
-                </div>
-            </div>
-            <div class="Cart__Products-Footer" *ngIf="ifAllCheck()"
-                (click)="onDeleteAll()">
-                Xóa Tất Cả
-            </div>
+  <h3 class="Cart__Title">GIỎ HÀNG</h3>
+  <h3>{{mess}}</h3>
+  <div class="Cart__Body">
+    <div class="Cart__Products">
+      <div class="Cart__Products-Header">
+        <div class="Checkbox__All-Product">
+          <input type="checkbox" name class="checkbox" id="checkbox__all-product" (click)="onCheckAll()">
         </div>
-        <div class="Cart__Bill" *ngIf="checkUserLogin()">
-            <h2>HÓA ĐƠN</h2>
-            <div class="Cart__Bill-Info" *ngFor="let User of UserLogin">
-                <span class="Cart__Bill-Info-Name">
-                    Tên: {{User.HoTen}}
-                </span>
-                <span class="Cart__Bill-Info-Email">
-                    Email: {{User.Email}}
-                </span>
-                <span class="Cart__Bill-Info-Phone">
-                    SDT: {{User.DienthoaiKH}}
-                </span>
-                <span class="Cart__Bill-Info-Date">
-                    Ngày Giao Dịch: {{Date}}
-                </span>
-            </div>
-            <div class="Cart__Bill-Pay">
-                <!-- New code for payment method selection using radio buttons -->
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="paymentMethod" [value]="'creditCard'">
-                        Thẻ Tín Dụng
-                    </label>
-                    <label>
-                        <input type="radio" name="paymentMethod" [value]="'wallet'">
-                        Ví Điện Tử
-                    </label>
-                    <!-- You can add more options as needed -->
-                </div>
-            </div>
-            <div class="Cart__Bill-Pay">
-                <div class="Cart__Bill-Pay-Price">
-                    Tổng <span>{{Total|number:'1.3'}}đ</span>
-                </div>
-
-                
-                
-                <div class="Cart__Bill-Pay-Price">
-                    Tổng tiền sau giảm giá <span>{{Promotion|number:'1.3'}}đ</span>
-                </div>
-                <div class="Cart__Bill-Pay-BtnPay" (click)="DatHang()">
-                    Thanh Toán
-                </div>
-            </div>
+        <span>Chọn tất cả ({{ Book?.length || 0 }} sản phẩm)</span>
+        <div class="Title__Count">Số lượng</div>
+        <div class="Title__Price">Giá</div>
+        <div style="flex-basis: 5%;"></div>
+      </div>
+      <div class="Cart__Products-Empty" *ngIf="ifEmpty()">
+        <div class="Cart__Products-Empty-image">
+          <img src="https://i.pinimg.com/originals/ec/0c/0c/ec0c0c652f7a9fb965bf08f45c4403fe.gif" alt>
         </div>
-        <div class="Cart__Bill" *ngIf="!checkUserLogin()">
-            <h2>HÓA ĐƠN</h2>
-            <div class="Cart__Bill-Info">
-                <span>Vui Lòng Đăng Nhập</span>
-                <span class="Cart__Bill-Info-Date">
-                    Ngày Giao Dịch: {{Date | date: 'dd/MM/yyyy'}}
-                </span>
+        <span>Bạn hiện chưa chọn sách nào</span>
+      </div>
+      <div class="Cart__Products-Body" *ngFor="let book of Book">
+        <div class="Cart__Products-item">
+          <div class="checkbox__product">
+            <input type="checkbox" name class="checkbox" id="checkbox__product">
+          </div>
+          <div class="imgbook">
+            <img src="{{book.Anh}}" class="Img__Book" alt>
+          </div>
+          <a class="Cart__Products-BookName">
+            {{book.Tensach}}
+          </a>
+          <div class="Cart__Products-group-product-info">
+
+            <div class="Cart__Products-Count">
+              <div class="Cart__Products-Button">
+                <button (click)="lessProducts(book.idcart)">
+                  <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-remove.svg"
+                    alt="remove-icon" width="20" height="20">
+                </button>
+                <input type="text" readonly value="{{book.count}}" id="inputNum" placeholder="1" class="input">
+                <button (click)="moreProducts(book.idcart)">
+                  <img src="https://frontend.tikicdn.com/_desktop-next/static/img/pdp_revamp_v2/icons-add.svg"
+                    alt="add-icon" width="20" height="20">
+                </button>
+              </div>
             </div>
-            <div class="Cart__Bill-Pay">
-                <!-- New code for payment method selection using radio buttons -->
-                <div class="payment-method">
-                    <label>
-                        <input type="radio" name="paymentMethod" [value]="'creditCard'">
-                        Thẻ Tín Dụng
-                    </label>
-                    <label>
-                        <input type="radio" name="paymentMethod" [value]="'wallet'">
-                        Ví Điện Tử
-                    </label>
-                    <!-- You can add more options as needed -->
-                </div>
-            </div>
-            <div class="Cart__Bill-Pay">
-                <div class="Cart__Bill-Pay-Price">
-                    Tổng <span>{{Total|number:'1.3'}}đ</span>
-                </div>
-                        <!-- New code for payment method selection using radio buttons -->
-           
-                <div class="Cart__Bill-Pay-BtnPay" (click)="DatHang()">
-                    Thanh Toán
-                </div>
-            </div>
+            <span>{{book.unitprice * book.count|number:'1.3'}}đ</span>
+            <mat-icon (click)="delete(book.idcart)">remove_shopping_cart</mat-icon>
+          </div>
+
         </div>
+      </div>
+      <div class="Cart__Products-Footer" *ngIf="ifAllCheck()" (click)="onDeleteAll()">
+        Xóa Tất Cả
+      </div>
     </div>
+    <div class="Cart__Bill" *ngIf="checkUserLogin()">
+      <h2>HÓA ĐƠN</h2>
+      <div class="Cart__Bill-Info" *ngFor="let User of UserLogin">
+        <span class="Cart__Bill-Info-Name">
+          Tên: {{User.HoTen}}
+        </span>
+        <span class="Cart__Bill-Info-Email">
+          Email: {{User.Email}}
+        </span>
+        <span class="Cart__Bill-Info-Phone">
+          SDT: {{User.DienthoaiKH}}
+        </span>
+        <span class="Cart__Bill-Info-Date">
+          Ngày Giao Dịch: {{Date}}
+        </span>
+      </div>
+      <div class="Cart__Bill-Pay">
+        <!-- New code for payment method selection using radio buttons -->
+        <div class="payment-method">
+          <label>
+            <input type="radio" name="paymentMethod" [value]="'creditCard'">
+            Thẻ Tín Dụng
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" [value]="'wallet'">
+            Ví Điện Tử
+          </label>
+          <!-- You can add more options as needed -->
+        </div>
+      </div>
+      <div class="Cart__Bill-Pay">
+        <div class="Cart__Bill-Pay-Price">
+          Tổng <span>{{Total|number:'1.3'}}đ</span>
+        </div>
 
-    <!-- Form nhập mã voucher -->
-    <div class="get-voucher-form">
-        <h3>Lấy voucher theo mã code</h3>
-        <form (submit)="getVoucherByCode()">
-            <div class="form-group">
-                <label for="voucherCode">Nhập mã voucher:</label>
-                <input type="text" id="voucherCode" name="voucherCode"
-                    [(ngModel)]="voucherCode" required>
-            </div>
-            <button type="submit">Tìm</button>
-        </form>
-    </div>
-    <!-- Kết quả của yêu cầu -->
-    <div class="result">
-        <h3>Kết quả</h3>
-        <p *ngIf="selectedVoucher">
-            Mã voucher: {{ selectedVoucher.discountPercentage }}
-        </p>
-        <p *ngIf="selectedVoucher">
-            Tổng đơn hàng được áp dụng: {{ selectedVoucher.minOrderAmount|number:'1.3' }}
-        </p>
-        <p *ngIf="selectedVoucher && Total >= selectedVoucher.minOrderAmount; else notApplicable">
-            Được áp dụng
-        </p>
-        <ng-template #notApplicable>
-            <p>Chưa thỏa điều kiện</p>
-        </ng-template>
-    </div>
-    
 
-    <!-- Danh sách voucher -->
-    <div class="voucher-list">
-        <h3>Danh sách voucher</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Mã voucher</th>
-                    <th>Hết hạn</th>
-                    <th>% Giảm giá</th>
-                    <th>Số tiền tối thiểu</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let voucher of vouchers">
-                    <td>{{ voucher.code }}</td>
-                    <td>{{ voucher.expirationDate | date:'yyyy-MM-dd' }}</td>
-                    <td>{{ voucher.discountPercentage }}%</td>
-                    <td>{{ voucher.minOrderAmount|number:'1.3' }}</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="Cart__Bill-Pay-Price">
+          Tổng tiền sau giảm giá <span>{{Promotion|number:'1.3'}}đ</span>
+        </div>
+        <div class="Cart__Bill-Pay-BtnPay" (click)="DatHang()">
+          Thanh Toán
+        </div>
+      </div>
     </div>
+    <div class="Cart__Bill" *ngIf="!checkUserLogin()">
+      <h2>HÓA ĐƠN</h2>
+      <div class="Cart__Bill-Info">
+        <span>Vui Lòng Đăng Nhập</span>
+        <span class="Cart__Bill-Info-Date">
+          Ngày Giao Dịch: {{Date | date: 'dd/MM/yyyy'}}
+        </span>
+      </div>
+      <div class="Cart__Bill-Pay">
+        <!-- New code for payment method selection using radio buttons -->
+        <div class="payment-method">
+          <label>
+            <input type="radio" name="paymentMethod" [value]="'creditCard'">
+            Thẻ Tín Dụng
+          </label>
+          <label>
+            <input type="radio" name="paymentMethod" [value]="'wallet'">
+            Ví Điện Tử
+          </label>
+          <!-- You can add more options as needed -->
+        </div>
+      </div>
+      <div class="Cart__Bill-Pay">
+        <div class="Cart__Bill-Pay-Price">
+          Tổng <span>{{Total|number:'1.3'}}đ</span>
+        </div>
+        <!-- New code for payment method selection using radio buttons -->
+
+        <div class="Cart__Bill-Pay-BtnPay" (click)="DatHang()">
+          Thanh Toán
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form nhập mã voucher -->
+  <div class="get-voucher-form">
+    <h3>Lấy voucher theo mã code</h3>
+    <form (submit)="getVoucherByCode()">
+      <div class="form-group">
+        <label for="voucherCode">Nhập mã voucher:</label>
+        <input type="text" id="voucherCode" name="voucherCode" [(ngModel)]="voucherCode" required>
+        <button type="submit">Tìm</button>
+      </div>
+    </form>
+  </div>
+  <!-- Kết quả của yêu cầu -->
+  <div class="result">
+    <h3>Kết quả</h3>
+    <p *ngIf="selectedVoucher">
+      Mã voucher: {{ selectedVoucher.discountPercentage }}
+    </p>
+    <p *ngIf="selectedVoucher">
+      Tổng đơn hàng được áp dụng: {{ selectedVoucher.minOrderAmount|number:'1.3' }}
+    </p>
+    <p *ngIf="selectedVoucher && Total >= selectedVoucher.minOrderAmount; else notApplicable">
+      Được áp dụng
+    </p>
+    <ng-template #notApplicable>
+      <p>Chưa thỏa điều kiện</p>
+    </ng-template>
+  </div>
+
+
+  <!-- Danh sách voucher -->
+  <div class="voucher-list">
+    <h3>Danh sách voucher</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Mã voucher</th>
+          <th>Hết hạn</th>
+          <th>% Giảm giá</th>
+          <th>Số tiền tối thiểu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voucher of vouchers">
+          <td>{{ voucher.code }}</td>
+          <td>{{ voucher.expirationDate | date:'yyyy-MM-dd' }}</td>
+          <td>{{ voucher.discountPercentage }}%</td>
+          <td>{{ voucher.minOrderAmount|number:'1.3' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

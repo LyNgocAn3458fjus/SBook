@@ -19,14 +19,14 @@ export class HomeComponent implements OnInit {
   }
 
   getbooksold1() {
-    this.bookstore.getbookforpagehome().subscribe(data => {
-      this.BookSold1 = data.Book1
-      this.BookSold2 = data.Book2
-      this.newbook = data.Book3
-      this.Banner.push(data.Banner)
+  this.bookstore.getbookforpagehome().subscribe(data => {
+    this.BookSold1 = data.Book1
+    this.BookSold2 = data.Book2
+    this.newbook = data.Book3
+    this.Banner.push(data.Banner)
 
-    })
-  }
+  })
+}
 
   isLoading() {
     if (this.BookSold1 == null) {
@@ -41,6 +41,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['detail', id]);
   }
 
-  
+
 
 }

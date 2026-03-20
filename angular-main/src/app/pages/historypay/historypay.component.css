@@ -4,10 +4,15 @@
     padding-top: 50px;
     min-height: 70vh;
     animation: toVisibleRight 1.5s 1 linear forwards;
+    background-color:#F0F0DB ;
+    padding: 20px;
+    border-bottom: 2px solid #E1D9BC;
+    box-shadow: 0 0 20px 10px rgba(145, 95, 35, 0.15) !important;
 }
 
 .HistoryPay__Container h1 {
     font-weight: 600;
+    color: #915f23;
 }
 
 .HistoryPay__Header,
@@ -28,16 +33,26 @@
 }
 
 .HistoryPay__Header {
-    background-color: black;
+    background: linear-gradient(
+        160deg,
+        rgba(244,221,91,0.9),
+        rgba(244,135,54,0.9)
+    );
     color: white;
     font-weight: 600;
-    padding: 5px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .HistoryPay__Details {
-    padding: 10px 0;
-    border-top: 1px solid rgba(109, 109, 109, 0.308);
-    border-bottom: 1px solid rgba(109, 109, 109, 0.308);
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.HistoryPay__Details:hover {
+    background: #f6f2e8;
 }
 
 .HistoryPay__Title-DatePay,
@@ -61,46 +76,48 @@
 }
 
 .HistoryPay__Bill-Setting-details {
-    background-color: rgba(255, 145, 0, 0.678);
+    background-image: radial-gradient(
+        circle 298px at -4.6% 85%,
+        rgba(244,221,91,0.84) 14.9%,
+        rgba(244,135,54,0.86) 90%
+    );
     width: fit-content;
-    padding: 10px;
+    padding: 10px 16px;
     margin: 0 auto;
     cursor: pointer;
     color: white;
     font-weight: 600;
     border-radius: .5rem;
-    transition: 1s;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(145,95,35,0.25);
 }
 
 .HistoryPay__Bill-Setting-details:hover {
-    background-color: orange;
-    box-shadow: 0 0 10px 0 orange;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(145,95,35,0.35);
 }
 
-/* DialogDetailsHistoryPay */
 .DialogDetailsHistoryPay__Container {
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.651);
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
     min-height: 120vh;
     height: fit-content;
     position: absolute;
-    transition: 1s;
     display: none;
-    transition: 1s;
     transform: translateY(-30px);
     animation: toVisible 1s 1 ease-in-out;
 }
 
 .DialogDetailsHistoryPay {
     margin: 100px auto;
-    background-color: white;
+    background-color: #F0F0DB;
     width: 40vw;
     min-height: 50vh;
     padding-bottom: 50px;
     height: fit-content;
-    box-shadow: 0 0 10px 0 black;
-    border-radius: .5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: .7rem;
     position: relative;
 }
 
@@ -108,19 +125,27 @@
     margin: 20px 0 0 0;
     display: flex;
     align-items: center !important;
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.815);
+    font-weight: 500;
+    background: linear-gradient(
+        160deg,
+        rgba(244,221,91,0.9),
+        rgba(244,135,54,0.9)
+    );
     color: white;
 }
 
 .DialogDetailsHistoryPay__infoUser {
     padding-top: 50px;
     padding-left: 30px;
+    background-color: #F0F0DB;
+    border-radius: 30px;
+
 }
 
 .DialogDetailsHistoryPay__infoUser h1 {
     font-weight: 600;
     font-size: 20px;
+    color: #915f23;
 }
 
 .DialogDetailsHistoryPay__infoUser-Details {
@@ -133,8 +158,8 @@
     padding-bottom: 10px;
     padding-top: 10px;
     margin-top: 20px;
-    border-top: 1px solid rgba(109, 109, 109, 0.308);
-    border-bottom: 1px solid rgba(109, 109, 109, 0.308);
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .DialogDetailsHistoryPay__Title-Image,
@@ -146,6 +171,7 @@
 .DialogDetailsHistoryPay__Image img {
     width: 60%;
     height: 150px;
+    border-radius: 6px;
 }
 
 .DialogDetailsHistoryPay__Title-BookName,
@@ -167,7 +193,7 @@
 }
 
 .DialogDetailsHistoryPay__Price {
-    color: red;
+    color: #d97706;
     font-weight: 600;
 }
 
@@ -181,17 +207,19 @@
 
 .DialogDetailsHistoryPay__CloseBtn mat-icon {
     font-size: 30px;
-    transition: 1s;
+    transition: 0.3s;
 }
 
 .DialogDetailsHistoryPay__CloseBtn mat-icon:hover {
-    color: red;
+    color: #ef4444;
 }
 
 .my-pagination /deep/ .ngx-pagination .current {
     margin: 20px auto !important;
     width: fit-content !important;
+    background: #915f23;
 }
+
 .DateSearch{
     display: flex;
     justify-content: space-around;
@@ -199,17 +227,22 @@
     margin: 20px 0 20px 50px;
     width: 40%;
 }
-    .DateSearch span{
-        font-weight: 600;
-    }
+
+.DateSearch span{
+    font-weight: 600;
+    color: #915f23;
+}
+
 @media screen and (max-width:415px) {
     .HistoryPay__Container {
         width: 100%;
     }
+
     .DateSearch{
         width: 100%;
         margin: 20px 0;
     }
+
     .HistoryPay__Container h1 {
         margin-left: 30px;
     }
@@ -238,12 +271,15 @@
         flex-basis: 40%;
         text-align: center;
     }
+
     .DialogDetailsHistoryPay{
         width: 80vw;
     }
+
     .DialogDetailsHistoryPay__Image{
         height: 100px;
     }
+
     .DialogDetailsHistoryPay__Image img{
         height: 100%;
         width: 80%;
@@ -255,7 +291,6 @@
         transform: translateX(-100%);
         opacity: 0;
     }
-
     to {
         transform: translateX(0%);
         opacity: 1;
