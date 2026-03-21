@@ -1,16 +1,48 @@
 /* Shadow chung */
 .shadow {
-  box-shadow: 0 0 20px 10px rgba(145, 95, 35, 0.15) !important; /* dùng màu nâu nhẹ */
+  box-shadow: 0 0 20px 10px rgba(145, 95, 35, 0.15) !important;
+  /* dùng màu nâu nhẹ */
   border-radius: 10px;
-  background-color: #F0F0DB; /* nền chính */
+  background-color: #F0F0DB;
+  /* nền chính */
 }
-.bg-bg-main{
-  background-color:#E1D9BC;
+
+.Title_main {
+  font-size: 28px;
+  font-weight: 700;
+  color: #5a4633;
+  margin-bottom: 20px;
+  position: relative;
 }
+
+/* gạch chân xịn */
+.Title_main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 60px;
+  height: 4px;
+  background: radial-gradient(circle,
+      rgba(244, 221, 91, 0.84),
+      rgba(244, 135, 54, 0.86));
+  border-radius: 5px;
+}
+
+
+
+
+
+
+.bg-bg-main {
+  background-color: #E1D9BC;
+}
+
 /* Tab nav bên trái */
 .profile-tab-nav {
   min-width: 250px;
-  background-color: #e4cb85; /* vàng header */
+  background-color: #e4cb85;
+  /* vàng header */
   border-radius: 10px;
   padding: 10px 0;
   font-family: 'Nunito Sans', sans-serif;
@@ -39,9 +71,12 @@
   margin-right: 10px;
   color: #333;
 }
+
 .btn-btn-main {
-  background-color: #e4cb85; /* nền vàng header */
-  color: #000;               /* chữ đen */
+  background-color: #e4cb85;
+  /* nền vàng header */
+  color: #000;
+  /* chữ đen */
   font-weight: 500;
   font-size: 16px;
   padding: 12px 25px;
@@ -49,11 +84,13 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(145, 95, 35, 0.3); /* shadow nâu nhẹ */
+  box-shadow: 0 4px 6px rgba(145, 95, 35, 0.3);
+  /* shadow nâu nhẹ */
 }
 
 .btn-btn-main:hover {
-  background: linear-gradient(90deg, #e4cb85, #915f23); /* gradient vàng → nâu */
+  background: linear-gradient(90deg, #e4cb85, #915f23);
+  /* gradient vàng → nâu */
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(145, 95, 35, 0.5);
@@ -63,10 +100,12 @@
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(145, 95, 35, 0.3);
 }
+
 /* Nội dung tab */
 .tab-content {
   flex: 1;
-  background-color: #F0F0DB; /* nền chính */
+  background-color: #F0F0DB;
+  /* nền chính */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(145, 95, 35, 0.1);
@@ -82,7 +121,8 @@
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  border: 5px solid #e4cb85; /* viền vàng header */
+  border: 5px solid #e4cb85;
+  /* viền vàng header */
   box-shadow: 0 4px 10px rgba(145, 95, 35, 0.2);
   object-fit: cover;
   transition: all 0.3s ease;

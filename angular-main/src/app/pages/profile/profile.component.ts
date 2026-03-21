@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
           this.diachi = res.DiachiKH
           this.sdt = res.DienthoaiKH
           this.date = res.Ngaysinh
-          this.img = res.Anh
+          this.img = 'http://localhost:3000' + res.Anh;
 
         }
 
@@ -98,7 +98,7 @@ export class ProfileComponent implements OnInit {
 
       if (this.data.id != null) {
 
-        if (!(this.imgchoose == "")) {
+        if (this.imgchoose && this.imgchoose.files.length > 0) {
 
           const formdata = new FormData();
 
@@ -113,7 +113,7 @@ export class ProfileComponent implements OnInit {
             next: res => {
 
               let linkAnh = res.data;
-
+              this.img = 'http://localhost:3000' + linkAnh;
               let bodyProfile = new reqprofile(
                 this.data.id,
                 linkAnh,
