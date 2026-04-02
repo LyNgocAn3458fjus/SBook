@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000"
+            "url": "https://sbook-yv6k.onrender.com"
         }
     ],
     "tags": [
@@ -976,7 +976,7 @@
                                     }
                                 },
                                 "example": {
-                                    "Image": "http://localhost:3000/open-image/img_12391827398741.jpg"
+                                    "Image": "https://sbook-yv6k.onrender.com/open-image/img_12391827398741.jpg"
                                 }
                             }
                         }

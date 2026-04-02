@@ -3,6 +3,7 @@ import { BookStoreAPI } from '../../services/bookstore.services';
 import { resprofile, reqprofile, reqprofilenoimg } from '../../services/Classes/profile'
 import { reqpass, respass } from '../../services/Classes/changepass'
 import { ToastrService } from 'ngx-toastr'
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-profile',
@@ -62,7 +63,7 @@ export class ProfileComponent implements OnInit {
           this.diachi = res.DiachiKH
           this.sdt = res.DienthoaiKH
           this.date = res.Ngaysinh
-          this.img = 'http://localhost:3000' + res.Anh;
+          this.img = environment.apiUrl + res.Anh;
 
         }
 
@@ -113,7 +114,7 @@ export class ProfileComponent implements OnInit {
             next: res => {
 
               let linkAnh = res.data;
-              this.img = 'http://localhost:3000' + linkAnh;
+              this.img = environment.apiUrl + linkAnh;
               let bodyProfile = new reqprofile(
                 this.data.id,
                 linkAnh,

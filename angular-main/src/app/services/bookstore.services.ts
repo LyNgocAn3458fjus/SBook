@@ -8,6 +8,8 @@ import { reqpass, respass } from './Classes/changepass';
 import { reqCTDonHang, resCTDonHang, resDatHang, reqChang_Stautus } from "./Classes/DonHang";
 import { resALL, resNXB } from "./Classes/NXB";
 import { resAuthor } from "./Classes/author";
+import { environment } from 'src/environments/environment';
+
 // nơi giao tiếp với backend và chưa logic chung, gọi API
 @Injectable({
     providedIn: 'root'
@@ -18,7 +20,7 @@ import { resAuthor } from "./Classes/author";
 export class BookStoreAPI {
     [x: string]: any;
     constructor(private httclient: HttpClient) { }
-    url = "http://localhost:3000";
+    url = environment.apiUrl;
 
     SendMail(Mail: string): Observable<any> {
         return this.httclient.get<Banner>(this.url + "/Sendmail/" + Mail)
